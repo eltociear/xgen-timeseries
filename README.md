@@ -28,7 +28,12 @@ This library offers a comprehensive implementation of various generative models,
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
 
-![An overview of XGen framework interacted with XGen Archive.](docs/source/_static/overview_xgen.pdf)
+
+<object data="docs/source/_static/overview_xgen.pdf" type="application/pdf" width="700px" height="400px">
+    <embed src="docs/source/_static/overview_xgen.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="docs/source/_static/overview_xgen.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
 **Note**
 > Your ```XGen Time Series``` now supports distributed training using PyTorch's DDP (Distributed Data Parallel). With this new feature, you can now train your preferred Generative Time Series models faster and on custom datasets, all with just a few lines of code. This allows for improved scalability and accelerated training across multiple GPUs or even distributed systems.
