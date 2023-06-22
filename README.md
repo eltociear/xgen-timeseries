@@ -1,5 +1,5 @@
 
-<p align="center">
+<p align="left">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
 	</a>
