@@ -449,7 +449,7 @@ Launching an experiment monitoring with `comet_ml` in XGen is pretty simple. The
 ```
 See the detailed tutorial 
 
-## Reconstruction 
+## Generation data (Uk-DALE Dataset) 
 
 ![An overview of XGen framework interacted with XGen Archive](docs/source/_static/Uk-DALE.png)
 
