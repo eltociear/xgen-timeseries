@@ -449,28 +449,6 @@ Launching an experiment monitoring with `comet_ml` in XGen is pretty simple. The
 ```
 See the detailed tutorial 
 
-
-## Getting your hands on the code 
-
-To help you to understand the way XGen works and how you can train your models with this library we also
-provide tutorials:
-
-- [making_your_own_autoencoder.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to pass your own networks to the models implemented in XGen [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/making_your_own_autoencoder.ipynb)
-
-- [custom_dataset.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to  use custom datasets with any of the models implemented in XGen [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/custom_dataset.ipynb)
-
-- [hf_hub_models_sharing.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to upload and download models for the HuggingFace Hub [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/hf_hub_models_sharing.ipynb)
-
-- [wandb_experiment_monitoring.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to monitor you experiments using `wandb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/wandb_experiment_monitoring.ipynb)
-
-- [mlflow_experiment_monitoring.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to monitor you experiments using `mlflow` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/mlflow_experiment_monitoring.ipynb)
-
-- [comet_experiment_monitoring.ipynb](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks) shows you how to monitor you experiments using `comet_ml` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/main/examples/notebooks/comet_experiment_monitoring.ipynb)
-
-- [models_training](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/notebooks/models_training) folder provides notebooks showing how to train each implemented model and how to sample from it using `XGen.samplers`.
-
-- [scripts](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/examples/scripts) folder provides in particular an example of a training script to train the models on benchmark data sets (mnist, cifar10, celeba    )
-
 ## Dealing with issues 🛠️
 
 If you are experiencing any issues while running the code or request new features/models to be implemented please [open an issue on github](https://github.com/XgenTimeSeries/xgen-timeseries/issues).
