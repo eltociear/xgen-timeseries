@@ -449,6 +449,10 @@ Launching an experiment monitoring with `comet_ml` in XGen is pretty simple. The
 ```
 See the detailed tutorial 
 
+## Reconstruction 
+
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/uk-dale.png)
+
 ## Dealing with issues 🛠️
 
 If you are experiencing any issues while running the code or request new features/models to be implemented please [open an issue on github](https://github.com/XgenTimeSeries/xgen-timeseries/issues).
@@ -462,7 +466,7 @@ You want to contribute to this library by adding a model, a sampler or simply fi
 If you find this work useful or use it in your research, please consider citing us
 
 ```bibtex
-@inproceedings{Koublal23XGenTS,
+@inproceedings{KoublalXGenTS,
  author = {khalid Oublal, Ladjal, Benhaiem, le-borgne and Roueff},
  booktitle = {Advances in Neural Information Processing Systems},
  pages = {21575--21589},
