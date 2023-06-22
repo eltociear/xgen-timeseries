@@ -1,12 +1,12 @@
 <p align="left">
+	<a>
+		<img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white"/>
+	</a>
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
 	</a>
 	<a href='https://XGen.readthedocs.io/en/latest/?badge=latest'>
     	    <img src='https://readthedocs.org/projects/XGen/badge/?version=latest' alt='Documentation Status' />
-	</a>
-	<a>
-		<img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white"/>
 	</a>
 	<a href='https://creativecommons.org/licenses/by/4.0/'>
 	    <img alt="CC 4.0 - License" src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg">
