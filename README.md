@@ -23,6 +23,7 @@
 	
     
 # XGen Time Seires
+[XGen Time Seires](docs/source/_static/logo.png)
 
 This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
 
