@@ -1,7 +1,4 @@
-<p align="left">
-	<a>
-		<img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white"/>
-	</a>
+<p align="center">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
 	</a>
