@@ -14,16 +14,15 @@
 
 </p>
 <p align="center">
-
+ <a>
+  <img src="docs/source/_static/logo.png"  width="300" height="100">
+ </a><br>
  <a>
   <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
  </a><br>
   <a href="https://XGen.readthedocs.io/en/latest/"> Documentation </a>
 </p>
-	
     
-# <img src="docs/source/_static/logo.png"  width="300" height="100">
-
 This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
