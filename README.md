@@ -16,9 +16,6 @@
  <a>
   <img src="docs/source/_static/logo.png"  width="300" height="100">
  </a><br>
- <a>
-  <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
- </a><br>
   <a href="https://XGen.readthedocs.io/en/latest/"> ➡ Documentation </a>
 </p>
 
