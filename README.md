@@ -1,14 +1,3 @@
-</p>
-<p align="center">
- <a>
-  <img src="docs/source/_static/logo.png"  width="300" height="100">
- </a><br>
- <a>
-  <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
- </a><br>
-  <a href="https://XGen.readthedocs.io/en/latest/"> Documentation </a>
-</p>
-
 <p align="left">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
@@ -21,6 +10,19 @@
 	</a><br>
 	</a>
 </p>
+
+</p>
+<p align="center">
+ <a>
+  <img src="docs/source/_static/logo.png"  width="300" height="100">
+ </a><br>
+ <a>
+  <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
+ </a><br>
+  <a href="https://XGen.readthedocs.io/en/latest/"> Documentation </a>
+</p>
+
+
     
 This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
 
