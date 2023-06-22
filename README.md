@@ -11,8 +11,6 @@
 	<a href='https://creativecommons.org/licenses/by/4.0/'>
 	    <img alt="CC 4.0 - License" src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg">
 	</a><br>
-	
-	</a>
 </p>
 
 </p>
