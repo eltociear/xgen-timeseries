@@ -28,6 +28,7 @@ This library offers a comprehensive implementation of various generative models,
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
 
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/overview_xgen.png)
 
 <object data="docs/source/_static/overview_xgen.pdf" type="application/pdf" width="700px" height="400px">
     <embed src="docs/source/_static/overview_xgen.pdf">
