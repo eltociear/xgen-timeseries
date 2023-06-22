@@ -451,7 +451,7 @@ See the detailed tutorial
 
 ## Reconstruction 
 
-![An overview of XGen framework interacted with XGen Archive](docs/source/_static/uk-dale.png)
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/Uk-DALE.png)
 
 ## Dealing with issues 🛠️
 
