@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="XGen Time Series",
+    name="XGenTS",
     version="0.1.1",
     author="Khalid OUBLAL (S2A team Institut Polytechnique de Paris)",
     author_email="khalid.oublal@polytechnique.edu",
