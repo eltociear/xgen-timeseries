@@ -1,29 +1,25 @@
-
 <p align="center">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
 	</a>
 	<a href='https://XGen.readthedocs.io/en/latest/?badge=latest'>
-    	<img src='https://readthedocs.org/projects/XGen/badge/?version=latest' alt='Documentation Status' />
+    	    <img src='https://readthedocs.org/projects/XGen/badge/?version=latest' alt='Documentation Status' />
 	</a>
 	<a href='https://creativecommons.org/licenses/by/4.0/'>
 	    <img alt="CC 4.0 - License" src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg">
 	</a><br>
-	</a>
 </p>
 
 </p>
 <p align="center">
-
  <a>
-  <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" />
+  <img src="docs/source/_static/logo.png"  width="300" height="100">
  </a><br>
-  <a href="https://XGen.readthedocs.io/en/latest/"> Documentation </a>
+  <a href="https://XGen.readthedocs.io/en/latest/"> ➡ Documentation </a>
 </p>
-	
-    
-# <img src="docs/source/_static/logo.png"  width="300" height="100">
 
+
+    
 This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
@@ -449,6 +445,10 @@ Launching an experiment monitoring with `comet_ml` in XGen is pretty simple. The
 ```
 See the detailed tutorial 
 
+## Generation data (Uk-DALE Dataset) 
+
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/Uk-DALE.png)
+
 ## Dealing with issues 🛠️
 
 If you are experiencing any issues while running the code or request new features/models to be implemented please [open an issue on github](https://github.com/XgenTimeSeries/xgen-timeseries/issues).
@@ -462,7 +462,7 @@ You want to contribute to this library by adding a model, a sampler or simply fi
 If you find this work useful or use it in your research, please consider citing us
 
 ```bibtex
-@inproceedings{Koublal23XGenTS,
+@inproceedings{KoublalXGenTS,
  author = {khalid Oublal, Ladjal, Benhaiem, le-borgne and Roueff},
  booktitle = {Advances in Neural Information Processing Systems},
  pages = {21575--21589},
