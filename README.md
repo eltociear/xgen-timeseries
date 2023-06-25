@@ -19,8 +19,7 @@
 </p>
 
 
-    
-This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
+**XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource:
 
 ```
 !pip install -u xgents
@@ -29,6 +28,10 @@ dataset = load_dataset("archive/uk_dale", streaming=True)
 # Alternatively, you can manually download the hdf5 file 
 # from XGen archive and use ```load_dataset``` with "streaming=False".
 ```
+By following these simple steps, you can leverage the power of the framework's energy data archive. Whether you need to forecast energy consumption or perform disaggregation analysis, this comprehensive dataset provides the necessary foundation for your tasks.
+
+**XGen.** The framework also includes an extensive implementation of diverse generative models, all integrated within a unified platform. This integration allows for benchmark experiments and seamless model comparisons by training the models using a consistent autoencoding neural network architecture. Furthermore, the framework offers a unique "make your own generative time series" feature, enabling you to train any of these models using your own dataset and customize the Encoder and Decoder neural networks according to your specific needs. This flexibility empowers you to tailor the models to your specific requirements and explore various possibilities in generative time series analysis.
+
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
 
