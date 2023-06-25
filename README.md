@@ -452,10 +452,7 @@ If you find this work useful or use it in your research, please consider citing 
 @inproceedings{KoublalXGenTS,
  author = {khalid Oublal, Ladjal, Benhaiem, le-borgne and Roueff},
  booktitle = {Advances in Neural Information Processing Systems},
- pages = {21575--21589},
- publisher = {Curran Associates, Inc.},
  title = {XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy},
- volume = {35},
  year = {2023}
 }
 ```
