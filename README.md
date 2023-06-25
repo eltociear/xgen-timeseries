@@ -22,6 +22,14 @@
     
 This library offers a comprehensive implementation of various generative models, all unified under a single framework. It enables benchmark experiments and facilitates model comparisons by training the models using the same autoencoding neural network architecture. With the "make your own generative time series" feature, you can train any of these models using your own data and customize the Encoder and Decoder neural networks as per your requirements.
 
+```
+!pip install -u xgents
+from xgents.datasets import load_dataset
+dataset = load_dataset("archive/uk_dale", streaming=True)
+# Alternatively, you can manually download the hdf5 file 
+# from XGen archive and use ```load_dataset``` with "streaming=False".
+```
+
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
 
 ![An overview of XGen framework interacted with XGen Archive](doc/source/_static/overview_xgen.png)
