@@ -1,6 +1,7 @@
 docutils
 ghp-import
 ipython
+matplotlib
 numpydoc
 pydocstyle
 Sphinx>=1.8.3
