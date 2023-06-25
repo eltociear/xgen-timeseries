@@ -15,7 +15,7 @@
  <a>
   <img src="doc/source/_static/logo.png"  width="300" height="100">
  </a><br>
-  <a href="https://XGen.readthedocs.io/en/latest/"> ➡ Documentation </a>
+  <a href="xgentimeseries.github.io/"> ➡ Documentation </a>
 </p>
 
 
