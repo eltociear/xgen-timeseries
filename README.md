@@ -242,19 +242,6 @@ And now build the model
 
 **important note 2**: For all VAE-based models (VAE, BetaVAE, IWAE, HVAE, VAMP, RHVAE), both the encoder and decoder must return a `ModelOutput` instance. For the encoder, the `ModelOutput` instance must contain the embbeddings and **log**-covariance matrices (of shape batch_size x latent_space_dim) respectively under the key `embedding` and `log_covariance` key. For the decoder, the `ModelOutput` instance must contain the reconstructions under the key `reconstruction`.
 
-
-## Using benchmark neural nets
-You can also find predefined neural network architectures for the most common data sets (*i.e.* MNIST, CIFAR, CELEBA    ) that can be loaded as follows
-
-```python
-       from XGen.models.nn.benchmark.mnist import (
-   	Encoder_Conv_AE_MNIST, # For AE based model (only return embeddings)
-   	Encoder_Conv_VAE_MNIST, # For VAE based model (return embeddings and log_covariances)
-   	Decoder_Conv_AE_MNIST
-    )
-```
-Replace *mnist* by cifar or celeba to access to other neural nets.
-
 ## Distributed Training with `XGen`
 As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](https://pytorch.org/doc/stable/notes/ddp.html). It allows you to train your favorite VAE faster and on larger dataset using multi-gpu and/or multi-node training.
 
