@@ -15,7 +15,7 @@
  <a>
   <img src="doc/source/_static/logo.png"  width="300" height="100">
  </a><br>
-  <a href="xgentimeseries.github.io/"> ➡ Documentation </a>
+  <a href="https://xgentimeseries.github.io/"> ➡ Documentation </a>
 </p>
 
 
