@@ -463,6 +463,7 @@ You want to contribute to this library by adding a model, a sampler or simply fi
 
 If you find this work useful or use it in your research, please consider citing using:
 
+```
 @software{Oublal_XGen_Time_Series_2023,
 author = {Oublal, Khalid and Ladjal, Said and Benhaiem, David and le-borgne, Emmanuel and Roueff, François},
 month = jun,
@@ -471,3 +472,4 @@ url = {https://xgentimeseries.github.io/},
 version = {0.1.2},
 year = {2023}
 }
+```
