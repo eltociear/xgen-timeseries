@@ -6,6 +6,12 @@ authors:
   #orcid: "https://orcid.org/0000-0000-0000-0000"
 - family-names: "Ladjal"
   given-names: "Said"
+- family-names: "Benhaiem"
+  given-names: "David"
+- family-names: "le-borgne"
+  given-names: "Emmanuel"
+- family-names: "Roueff"
+  given-names: "François"
 
 title: "XGen Time Series"
 version: 0.1.2
