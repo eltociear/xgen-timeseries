@@ -18,7 +18,7 @@
   <a href="https://xgen-timeseries.readthedocs.io/en/latest/"> ➡ Documentation </a>
 </p>
 
-Why do you need it, considering: 
+Why do you need XGen Time Series? 
 1) Convenient accessibility to energy datasets,
 2) Utilizing data augmentation to improve performance during training,
 3) Enhancing interpretability by explaining the nature of the augmentation generated?
