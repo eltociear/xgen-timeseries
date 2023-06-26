@@ -16,14 +16,12 @@
   <img src="doc/source/_static/logo.png"  width="300" height="100">
  </a><br>
   <a href="https://xgen-timeseries.readthedocs.io/en/latest/"> ➡ Documentation </a>
-	<br>
-	<a> Why do you need it, considering: 
-1) Convenient accessibility to energy datasets,
-2) Utilizing data augmentation to improve performance during training,
-3) Enhancing interpretability by explaining the nature of the augmentation generated? 
-	</a>
 </p>
 
+Why do you need it, considering: 
+1) Convenient accessibility to energy datasets,
+2) Utilizing data augmentation to improve performance during training,
+3) Enhancing interpretability by explaining the nature of the augmentation generated?
 
 **XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource:
 
