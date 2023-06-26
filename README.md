@@ -461,13 +461,13 @@ You want to contribute to this library by adding a model, a sampler or simply fi
 
 # Citation
 
-If you find this work useful or use it in your research, please consider citing us
+If you find this work useful or use it in your research, please consider citing using:
 
-```bibtex
-@inproceedings{KoublalXGenTS,
- author = {khalid Oublal, Ladjal, Benhaiem, le-borgne and Roueff},
- booktitle = {Advances in Neural Information Processing Systems},
- title = {XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy},
- year = {2023}
+@software{Oublal_XGen_Time_Series_2023,
+author = {Oublal, Khalid and Ladjal, Said and Benhaiem, David and le-borgne, Emmanuel and Roueff, François},
+month = jun,
+title = {{XGen Time Series}},
+url = {https://xgentimeseries.github.io/},
+version = {0.1.2},
+year = {2023}
 }
-```
