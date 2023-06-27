@@ -23,7 +23,7 @@ Why do you need XGen Time Series?
 2) Utilizing data augmentation to improve performance during training,
 3) Enhancing interpretability by explaining the nature of the augmentation generated?
 
-**XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource:
+**XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource (see [use_example](src/XGenTS/archive/use_example.ipynb)):
 
 ```
 !pip install -u xgents
