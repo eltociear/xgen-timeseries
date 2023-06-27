@@ -22,6 +22,7 @@ Copyright (c) 2010-2014 anatoly techtonik
 import sys, shutil, os
 import tempfile
 import math
+import h5py
 
 PY3K = sys.version_info >= (3, 0)
 if PY3K:
@@ -285,7 +286,10 @@ class ThrowOnErrorOpener(urllib.FancyURLopener):
     def http_error_default(self, url, fp, errcode, errmsg, headers):
         raise Exception("%s: %s" % (errcode, errmsg))
 
-def download(url, out=None, bar=bar_adaptive):
+def load_dataset(name_dataset="uk-dale", streaming=False,
+                 out=None,
+                 bar=bar_adaptive):
+    
     """High level function, which downloads URL into tmp file in current
     directory and then renames it to filename autodetected from either URL
     or HTTP headers.
@@ -294,6 +298,10 @@ def download(url, out=None, bar=bar_adaptive):
     :param out: output filename or directory
     :return:    filename where URL is downloaded to
     """
+    urlsources={"uk-dale": "https://github.com/oublalkhalid/XGen/raw/main/DatasetGenerated_devices-washing_machine-dishwasher-fridge-oven-stove-clothes_dryer_features_PQS_targets_P_dt-60S_nbHouses-443.hdf5"
+               }
+    url = urlsources[name_dataset]
+    
     names = dict()
     names["out"] = out or ''
     names["url"] = filename_from_url(url)
@@ -323,33 +331,9 @@ def download(url, out=None, bar=bar_adaptive):
     if os.path.exists(filename):
         filename = filename_fix_existing(filename)
     shutil.move(tmpfile, filename)
+    
+    
+    db = h5py.File(filename, 'r+')
 
     #print headers
-    return filename
-
-
-usage = """\
-usage: wget.py [options] URL
-
-options:
-  -o --output FILE|DIR   output filename or directory
-  -h --help
-  --version
-"""
-
-# if __name__ == "__main__":
-#     if len(sys.argv) < 2 or "-h" in sys.argv or "--help" in sys.argv:
-#         sys.exit(usage)
-#     if "--version" in sys.argv:
-#         sys.exit("wget.py " + __version__)
-
-#     from optparse import OptionParser
-#     parser = OptionParser()
-#     parser.add_option("-o", "--output", dest="output")
-#     (options, args) = parser.parse_args()
-
-#     url = sys.argv[1]
-#     filename = download(args[0], out=options.output)
-#     print("")
-#     print("Saved under %s" % filename)
-
+    return db
