@@ -116,7 +116,7 @@ To launch a model training, you only need to call a `TrainingPipeline` instance.
 
 ```python
        from XGen.pipelines import TrainingPipeline
-       from XGen.models import VAE, VAEConfig
+       from XGen.models import CCGAN, CCGANConfig
        from XGen.trainers import BaseTrainerConfig
 
        # Set up the training configuration
@@ -146,7 +146,7 @@ To launch a model training, you only need to call a `TrainingPipeline` instance.
        # Build the Pipeline
        pipeline = TrainingPipeline(
     	training_config=my_training_config,
-    	model=my_vae_model
+    	model=my_model
     )
        # Launch the Pipeline
        pipeline(
@@ -181,7 +181,7 @@ You can launch the data generation process from a trained model directly with th
        from XGen.models import AutoModel
        from XGen.samplers import NormalSampler
        # Retrieve the trained model
-       my_trained_vae = AutoModel.load_from_folder(
+       my_trained = AutoModel.load_from_folder(
    	'path/to/your/trained/model'
     )
        # Define your sampler
@@ -201,7 +201,7 @@ If you set `output_dir` to a specific path, the generated time series will be sa
 
 ## Your own Model architecture for forecasting or Energy Dissagregation 
  
-XGen provides you the possibility to define your own neural networks within the VAE models. For instance, say you want to train a Wassertstein AE with a specific encoder and decoder, you can do the following:
+XGen provides you the possibility to define your own neural networks within the generative models. For instance, say you want to train a Wassertstein AE with a specific encoder and decoder, you can do the following:
 
 ```python
        from XGen.models.nn import BaseEncoder, BaseDecoder
@@ -252,13 +252,8 @@ And now build the model
     )
 ```
 
-**important note 1**: For all AE-based models (AE, WAE, RAE_L2, RAE_GP), both the encoder and decoder must return a `ModelOutput` instance. For the encoder, the `ModelOutput` instance must contain the embbeddings under the key `embedding`. For the decoder, the `ModelOutput` instance must contain the reconstructions under the key `reconstruction`.
-
-
-**important note 2**: For all VAE-based models (VAE, BetaVAE, IWAE, HVAE, VAMP, RHVAE), both the encoder and decoder must return a `ModelOutput` instance. For the encoder, the `ModelOutput` instance must contain the embbeddings and **log**-covariance matrices (of shape batch_size x latent_space_dim) respectively under the key `embedding` and `log_covariance` key. For the decoder, the `ModelOutput` instance must contain the reconstructions under the key `reconstruction`.
-
 ## Distributed Training with `XGen`
-As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](https://pytorch.org/doc/stable/notes/ddp.html). It allows you to train your favorite VAE faster and on larger dataset using multi-gpu and/or multi-node training.
+As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](https://pytorch.org/doc/stable/notes/ddp.html). 
 
 To do so, you can build a python script that will then be launched by a launcher (such as `srun` on a cluster). The only thing that is needed in the script is to specify some elements relative to the distributed environment (such as the number of nodes/gpus) directly in the training configuration as follows
 
@@ -279,11 +274,11 @@ To do so, you can build a python script that will then be launched by a launcher
     )
 ```
 
-See this [example script](https://github.com/XgenTimeSeries/xgen-timeseries/blob/main/examples/scripts/distributed_training_imagenet.py) that defines a multi-gpu VQVAE training on ImageNet dataset. Please note that the way the distributed environnement variables (`world_size`, `rank`    ) are recovered may be specific to the cluster and launcher you use. 
+See this [example script](https://github.com/XgenTimeSeries/xgen-timeseries/blob/main/examples/scripts/distributed_training_imagenet.py) that defines a multi-gpu training on time series dataset. Please note that the way the distributed environment variables (`world_size`, `rank`    ) are recovered may be specific to the cluster and launcher you use. 
 
 ### Benchmark
 
-Below are indicated the training times for a Vector Quantized VAE (VQ-VAE) with `XGen` for 100 epochs on MNIST on V100 16GB GPU(s), for 50 epochs on [FFHQ](https://github.com/NVlabs/ffhq-dataset) (1024x1024 images) and for 20 epochs on [ImageNet-1k](https://huggingface.co/datasets/imagenet-1k) on V100 32GB GPU(s).
+Below are indicated the training times for a CCGAN with `XGen`:
 
 |  | Train Data | 1 GPU | 4 GPUs | 2x4 GPUs |
 |:---:|:---:|:---:|:---:|---|
@@ -310,7 +305,7 @@ $ huggingface-cli login
 ### Uploading a model to the Hub
 Any XGen model can be easily uploaded using the method `push_to_hf_hub`
 ```python
-       my_vae_model.push_to_hf_hub(hf_hub_path="your_hf_username/your_hf_hub_repo")
+       model.push_to_hf_hub(hf_hub_path="your_hf_username/your_hf_hub_repo")
 ```
 **Note:** If `your_hf_hub_repo` already exists and is not empty, files will be overridden. In case, 
 the repo `your_hf_hub_repo` does not exist, a folder having the same name will be created.
@@ -319,7 +314,7 @@ the repo `your_hf_hub_repo` does not exist, a folder having the same name will b
 Equivalently, you can download or reload any XGen's model directly from the Hub using the method `load_from_hf_hub`
 ```python
        from XGen.models import AutoModel
-       my_downloaded_vae = AutoModel.load_from_hf_hub(hf_hub_path="path_to_hf_repo")
+       downloaded = AutoModel.load_from_hf_hub(hf_hub_path="path_to_hf_repo")
 ```
 
 ## Monitoring your experiments with `wandb` 🧪
