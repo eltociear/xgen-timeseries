@@ -14,8 +14,8 @@
 <p align="center">
  <a>
   <img src="docs/_static/logo.png"  width="300" height="100">
- </a><br>
-  <a href="https://xgen-timeseries.readthedocs.io/en/latest/"> ➡ Documentation </a>
+ </a><br>	
+  <a href="https://xgentimeseries.github.io/xgen-timeseries/index.html"> ➡ Documentation </a>
 </p>
 
 ⚠️ Currently we updated some class of our  framework, please use our last release (v0.2.1-alpha)
