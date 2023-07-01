@@ -13,7 +13,7 @@
 </p>
 <p align="center">
  <a>
-  <img src="docs/source/_static/logo.png"  width="300" height="100">
+  <img src="docs/_static/logo.png"  width="300" height="100">
  </a><br>
   <a href="https://xgen-timeseries.readthedocs.io/en/latest/"> ➡ Documentation </a>
 </p>
