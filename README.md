@@ -1,4 +1,4 @@
-# XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy
+
 <p align="center">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
@@ -18,6 +18,8 @@
  </a><br>	
   <a href="https://xgentimeseries.github.io/xgen-timeseries/index.html"> ➡ Documentation </a>
 </p>
+
+# XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy
 
 ⚠️ Currently we updated some class of our  framework, please use our last release (v0.2.1-alpha)
 
