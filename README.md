@@ -1,3 +1,4 @@
+# XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy
 <p align="center">
         <a>
 	    <img src='https://img.shields.io/badge/python-3.7%7C3.8%7C3.9%2B-blueviolet' alt='Python' />
