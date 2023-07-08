@@ -5,7 +5,6 @@
 <table id="customers">
   <thead>
     <tr>
-      <th>Year</th>
       <th>Dataset</th>
       <th>Frequency</th>
       <th>Duration</th>
@@ -18,202 +17,184 @@
   </thead>
   <tbody>
     <tr>
-      <td>2020</td>
       <td>XGenTS-ESS(Ours)</td>
       <td>1Hz</td>
       <td>6 month</td>
       <td>Residential</td>
       <td>France</td>
       <td>I,V, P,Q, S</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://xgentimeseries.github.io/xgen-timeseries/ess_datasets/index.html" target="_blank"> [1]</> </td>
     </tr>
     <tr>
-      <td>2020</td>
       <td>IDEAL</td>
       <td>1Hz</td>
       <td>18 month</td>
       <td>Residential</td>
       <td>UK</td>
       <td>P, S</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://datashare.ed.ac.uk/handle/10283/3647" target="_blank"> [2]</> </td>
     </tr>
     <tr>
-      <td>2019</td>
       <td>Enertalk</td>
       <td>15 Hz</td>
       <td>3 day</td>
       <td>Residential</td>
       <td>South Korea</td>
       <td>P,Q</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://www.nature.com/articles/s41597-019-0212-5" target="_blank"> [3]</> </td>
     </tr>
     <tr>
-      <td>2018</td>
       <td>LIT</td>
       <td>15 kHz</td>
       <td>30 sec</td>
       <td>Residential</td>
       <td>Brazil</td>
       <td>P, S</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://pessoal.dainf.ct.utfpr.edu.br/douglasrenaux/LIT_Dataset/" target="_blank"> [4]</> </td>
     </tr>
     <tr>
-      <td>2018</td>
       <td>AMPds</td>
       <td>0.1 mHz</td>
       <td>2 years</td>
       <td>Residential</td>
       <td>Canada</td>
       <td>P, S,I</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="http://ampds.org/" target="_blank"> [5]</> </td>
     </tr>
     <tr>
-      <td>2016</td>
       <td>COOLL</td>
       <td>100 kHz</td>
       <td>6 sec</td>
       <td>Individual appliance</td>
       <td>France</td>
       <td>I,V</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://coolldataset.github.io/" target="_blank"> [6]</> </td>
     </tr>
     <tr>
-      <td>2016</td>
       <td>WHITED</td>
       <td>44 kHz</td>
       <td>5 sec</td>
       <td>Individual appliance</td>
       <td>Multiples</td>
       <td>I</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://www.cs.cit.tum.de/dis/resources/whited/" target="_blank"> [7]</> </td>
     </tr>
     <tr>
-      <td>2015</td>
       <td>REFIT</td>
       <td>1 Hz</td>
       <td>4+ years</td>
       <td>Residential</td>
       <td>US</td>
       <td>P</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned" target="_blank"> [8]</> </td>
     </tr>
     <tr>
-      <td>2015</td>
       <td>Dataport</td>
       <td>1 Hz</td>
       <td>4+ years</td>
       <td>Residential</td>
       <td>US</td>
       <td>P,S</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://ieee-dataport.org/" target="_blank"> [9]</> </td>
     </tr>
     <tr>
-      <td>2015</td>
       <td>UK-DALE</td>
       <td>16 kHz</td>
       <td>2 years</td>
       <td>Residential</td>
       <td>UK</td>
       <td>I,V, P,Q, S</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://www.nature.com/articles/sdata20157" target="_blank"> [10]</> </td>
     </tr>
     <tr>
-      <td>2015</td>
       <td>DRED</td>
       <td>1 Hz</td>
       <td>6 month</td>
       <td>Residential</td>
       <td>Netherlands</td>
       <td>P</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://www.st.ewi.tudelft.nl/~akshay/dred/" target="_blank"> [11]</> </td>
     </tr>
     <tr>
-      <td>2014</td>
       <td>PLAID</td>
       <td>30 kHz</td>
       <td>5 sec</td>
       <td>Individual appliance</td>
       <td>US</td>
       <td>I,V</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://energy.duke.edu/content/plug-load-appliance-identification-dataset-plaid" target="_blank"> [12]</> </td>
     </tr>
      <tr>
-      <td>2014</td>
       <td>ECO</td>
       <td>1227 kHz</td>
       <td>6 sec</td>
       <td>Residential</td>
       <td>Switzerland</td>
       <td>I,V, P, pf</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://sites.google.com/view/activities-prediction-202b/project-homepage/eco-dataset" target="_blank"> [13]</> </td>
     </tr>
      <tr>
-      <td>2013</td>
       <td>iAWE</td>
       <td>1 Hz</td>
       <td>73 day</td>
       <td>Residential</td>
       <td>India</td>
       <td>I, V, P, Q, S, pf</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://iawe.github.io/" target="_blank"> [14]</> </td>
     </tr>
      <tr>
-      <td>2012</td>
       <td>Tracebase</td>
       <td>1 Hz</td>
       <td>1 day</td>
       <td>Individual appliance</td>
       <td>Germany</td>
       <td>P</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://github.com/areinhardt/tracebase" target="_blank"> [15]</> </td>
     </tr>
      <tr>
-      <td>2011</td>
       <td>REDD</td>
       <td>16.5 kHz</td>
       <td>19 day</td>
       <td>Residential</td>
       <td>US</td>
       <td>I, V, P</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://tokhub.github.io/dbecd/links/redd.html" target="_blank"> [16]</> </td>
     </tr>
      <tr>
-      <td>2011</td>
       <td>BLUED</td>
       <td>12 kHz</td>
       <td>1 week</td>
       <td>Residential</td>
       <td>US</td>
       <td>I,V</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td><a href="https://tokhub.github.io/dbecd/links/Blued.html" target="_blank"> [17]</> </td>
     </tr>
      <tr>
-      <td>2017</td>
       <td>Electricity AP</td>
       <td>16mHz</td>
       <td>4 month</td>
       <td>Residential</td>
       <td>Belgium</td>
       <td>P</td>
-      <td><a href="#">Download</a></td>
-      <td></td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
+      <td> <a href="https://opennetzero.org/dataset/electricity-maps" target="_blank"> [18]</> </td>
     </tr>
   </tbody>
 </table>
