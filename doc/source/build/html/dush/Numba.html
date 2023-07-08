@@ -248,14 +248,14 @@ document.write(`
 <article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="numba-an-overview">
 <span id="numba-for-xgents"></span><h1>Numba -  an overview<a class="headerlink" href="#numba-an-overview" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://numba.pydata.org/numba-doc/latest/index.html">Numba</a> is a just-in-time compiler for Python that works best on code that uses NumPy arrays and functions, and loops.
+<p><a class="reference external" href="https://numba.pydata.org/numba-docs/latest/index.html">Numba</a> is a just-in-time compiler for Python that works best on code that uses NumPy arrays and functions, and loops.
 XGenTS includes <a class="reference internal" href="../getting_started/installation.html#optional-dependencies"><span class="std std-ref">Numba as an optional dependency</span></a> and a number of functions have been included in <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> for systems in which Numba is pre-installed. Additional functionality, <code class="xref py py-class docutils literal notranslate"><span class="pre">XGenTS.Numba</span></code>, of disabling/re-enabling numba for systems that have Numba installed has also been included.</p>
 <section id="a-simple-example-to-display-the-effectiveness-of-numba">
 <h2>A simple example to display the effectiveness of Numba<a class="headerlink" href="#a-simple-example-to-display-the-effectiveness-of-numba" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgen</span> <span class="k">as</span> <span class="nn">xg</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/timeit.html#module-timeit" title="timeit"><span class="nn">timeit</span></a>
 
 <span class="kn">from</span> <span class="nn">XGenTS.utils</span> <span class="kn">import</span> <span class="n">conditional_jit</span><span class="p">,</span> <span class="n">Numba</span>
@@ -266,7 +266,7 @@ XGenTS includes <a class="reference internal" href="../getting_started/installat
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -344,7 +344,7 @@ XGenTS includes <a class="reference internal" href="../getting_started/installat
 <p>Let’s see Numba’s effect on a few of XGenTS functions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">school</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_XGenTS_data</span><span class="p">(</span><span class="s2">"centered_eight"</span><span class="p">)</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s2">"mu"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
@@ -447,7 +447,7 @@ XGenTS includes <a class="reference internal" href="../getting_started/installat
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/doc/source/dush/Numba.ipynb">
+<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/docs/source/dush/Numba.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       

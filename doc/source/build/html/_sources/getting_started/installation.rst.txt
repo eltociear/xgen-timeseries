@@ -83,7 +83,7 @@ The list of optional dependencies to further enhance XGenTS is given below.
 - Numba
 
   Necessary to speed up the code computation. The installation details can be found
-  `here <https://numba.pydata.org/numba-doc/latest/user/installing.html>`_. Further details on enhanced functionality provided in XGenTS by Numba can be
+  `here <https://numba.pydata.org/numba-docs/latest/user/installing.html>`_. Further details on enhanced functionality provided in XGenTS by Numba can be
   :ref:`found here <numba_for_XGenTS>`.
 
 - Bokeh

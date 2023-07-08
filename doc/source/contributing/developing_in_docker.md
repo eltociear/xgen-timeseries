@@ -81,6 +81,6 @@ The documentation can be built with Docker by running `./scripts/container.sh --
 `./scripts/container.sh --build` needs to be executed once before running the doc build command.
 The docker image contains by default all dependencies needed
 for building the documentation. After having build the docs in the Docker
-container, they can be checked at `doc/build` and viewed in the browser from `doc/build/index.html`.
+container, they can be checked at `docs/build` and viewed in the browser from `docs/build/index.html`.
 
-To update any file, go to the specific file(`.md`, `.rst`, or `.ipynb`) and make your changes. In order to check the results, you can either check the {ref}`preview_change` or rebuild the docs with Docker. For the latter option, You need to only rebuild the docs, using the same command `./scripts/container.sh --docs`. The resulting docs will be saved in the `doc/build` directory as HTML files. Open your corresponding file and check the results. You wil also need to rebuild the docker image if extensions and dependencies were added or changed.
+To update any file, go to the specific file(`.md`, `.rst`, or `.ipynb`) and make your changes. In order to check the results, you can either check the {ref}`preview_change` or rebuild the docs with Docker. For the latter option, You need to only rebuild the docs, using the same command `./scripts/container.sh --docs`. The resulting docs will be saved in the `docs/build` directory as HTML files. Open your corresponding file and check the results. You wil also need to rebuild the docker image if extensions and dependencies were added or changed.

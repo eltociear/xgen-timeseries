@@ -210,7 +210,7 @@ html_context = {
     "github_user": "XGenTS-devs",
     "github_repo": "XGenTS",
     "github_version": "main",
-    "doc_path": "doc/source/",
+    "doc_path": "docs/source/",
     "default_mode": "light",
 }
 html_sidebars: Dict[str, Any] = {
@@ -324,9 +324,9 @@ intersphinx_mapping = {
     "pymc": ("https://www.pymc.io/projects/docs/en/stable", None),
     "mpl": ("https://matplotlib.org/stable", None),
     "bokeh": ("https://docs.bokeh.org/en/latest/", None),
-    "scipy": ("https://docs.scipy.org/doc/scipy/", None),
+    "scipy": ("https://docs.scipy.org/docs/scipy/", None),
     "zarr": ("https://zarr.readthedocs.io/en/stable/", None),
-    "numpy": ("https://numpy.org/doc/stable/", None),
+    "numpy": ("https://numpy.org/docs/stable/", None),
     "dask": ("https://docs.dask.org/en/latest/", None),
     "sphinx-primer": ("https://sphinx-primer.readthedocs.io/en/latest/", None),
     "sphinx": ("https://www.sphinx-doc.org/en/master/", None),

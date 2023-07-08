@@ -135,7 +135,7 @@ part of the docstring. Read more about it {doc}`here <sphinx:usage/restructuredt
 Sphinx is configured to ease referencing libraries XGenTS relies heavily on by
 using [intersphinx](https://docs.readthedocs.io/en/stable/guides/intersphinx.html).
 See guidance on the reference about how to link to objects from external
-libraries and the value of intersphinx_mapping in [conf.py](https://github.com/XGenTS-devs/XGenTS/blob/main/doc/source/conf.py) for the complete and up to date list of libraries that can be referenced.
+libraries and the value of intersphinx_mapping in [conf.py](https://github.com/XGenTS-devs/XGenTS/blob/main/docs/source/conf.py) for the complete and up to date list of libraries that can be referenced.
 
 In XGenTS docs, you can add references to functions and objects of `matplotlib`, `bokeh`, `xarray`, etc following the simple syntax. Let's try adding a function of few libraries, i.e., {meth}`xarray.Dataset.sel`, {func}`matplotlib.pyplot.subplots` and
 {func}`bokeh.plotting.figure`.
@@ -161,7 +161,7 @@ Note that the `:key:` before
 the reference must match the kind of object that is being referenced, it
 generally will not be `:ref:` nor `:doc:`. For
 example, for functions `:func:` has to be used and for class methods
-`:meth:`. The complete list of keys can be found [here](https://github.com/sphinx-doc/sphinx/blob/685e3fdb49c42b464e09ec955e1033e2a8729fff/sphinx/domains/python.py#L845-L881).
+`:meth:`. The complete list of keys can be found [here](https://github.com/sphinx-docs/sphinx/blob/685e3fdb49c42b464e09ec955e1033e2a8729fff/sphinx/domains/python.py#L845-L881).
 
 The extension [sphobjinv](https://sphobjinv.readthedocs.io/en/latest/) can
 also be helpful in order to get the exact type and name of a reference. Below
@@ -228,7 +228,7 @@ due to the preceding ``~``.
 You will find code tabs on every other page in XGenTS docs. As we have two main types of files, i.e, `.rst` and `.md`, we often use two code tabs to show the functionalities in both rST and Markdown.
 
 ### Synchronised Tabs
-XGenTS docs are using `sphinx-design` extension for adding sync code tabs in [conf.py](https://github.com/XGenTS-devs/XGenTS/blob/main/doc/source/conf.py#L61). You can check the syntax and more info about it
+XGenTS docs are using `sphinx-design` extension for adding sync code tabs in [conf.py](https://github.com/XGenTS-devs/XGenTS/blob/main/docs/source/conf.py#L61). You can check the syntax and more info about it
 at [Synchronised Tabs](https://sphinx-design.readthedocs.io/en/sbt-theme/tabs.html#synchronised-tabs). Using this extension saves us from a lot of raw-html code. Sphinx provides this extension to make our work easy and or code more concise.
 
 

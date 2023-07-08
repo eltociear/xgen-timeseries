@@ -273,7 +273,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgen</span> <span class="k">as</span> <span class="nn">xg</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.xarray.dev/en/stable/index.html#module-xarray" title="xarray"><span class="nn">xarray</span></a> <span class="k">as</span> <span class="nn">xr</span>
 
 <a class="sphinx-codeautolink-a" href="https://docs.xarray.dev/en/stable/generated/xarray.set_options.html#xarray.set_options" title="xarray.set_options"><span class="n">xr</span><span class="o">.</span><span class="n">set_options</span></a><span class="p">(</span><span class="n">display_expand_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">display_expand_attrs</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
@@ -3038,7 +3038,7 @@ Attributes: (3)</pre><div class="xr-wrap" style="display:none"><div class="xr-he
 <h2>Add a new variable<a class="headerlink" href="#add-a-new-variable" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">post</span><span class="p">[</span><span class="s2">"log_tau"</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">post</span><span class="p">[</span><span class="s2">"tau"</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">post</span><span class="p">[</span><span class="s2">"log_tau"</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">post</span><span class="p">[</span><span class="s2">"tau"</span><span class="p">])</span>
 <span class="n">idata</span><span class="o">.</span><span class="n">posterior</span>
 </pre></div>
 </div>
@@ -14233,7 +14233,7 @@ and obtain an <code class="docutils literal notranslate"><span class="pre">idata
 <p>You can also add new groups to InferenceData objects with the <code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code> (if the new groups are already in an InferenceData object) or with <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_groups()</span></code> (if the new groups are dictionaries or <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> objects).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">idata</span><span class="o">.</span><span class="n">add_groups</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">"predictions"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"obs"</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">))}},</span>
     <span class="n">dims</span><span class="o">=</span><span class="p">{</span><span class="s2">"obs"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"new_school"</span><span class="p">]},</span>
@@ -17070,7 +17070,7 @@ dl.xr-attrs {
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/doc/source/archive/WorkingWithInferenceData.ipynb">
+<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/docs/source/archive/WorkingWithInferenceData.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       

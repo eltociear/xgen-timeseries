@@ -444,9 +444,9 @@ three data dimensions overall.</p>
 <p>We will create fake inference data with data mimicking this situation to show how to sort dimensions.
 To keep things short and not clutter the guide too much with unnecessary output lines,
 we will stick to a posterior of a single variable and the dimension sizes will be <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/index.html#module-numpy.random" title="numpy.random"><span class="nn">numpy.random</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/index.html#module-numpy.random" title="numpy.random"><span class="nn">numpy.random</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a>
 <span class="gp">   ....: </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="pandas"><span class="nn">pandas</span></a> <span class="k">as</span> <span class="nn">pd</span>
-<span class="gp">   ....: </span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a><span class="p">()</span>
+<span class="gp">   ....: </span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a><span class="p">()</span>
 <span class="gp">   ....: </span><span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">   ....: </span><span class="n">coords</span> <span class="o">=</span> <span class="p">{</span>
 <span class="gp">   ....: </span>    <span class="s2">"subject"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ecoli"</span><span class="p">,</span> <span class="s2">"pseudomonas"</span><span class="p">,</span> <span class="s2">"clostridium"</span><span class="p">],</span>
@@ -649,9 +649,9 @@ Let’s say one of the variables in the posterior represents a <a class="referen
 to keep it as is for other post-processing tasks instead of extracting the sub diagonal <a class="reference external" href="https://en.wikipedia.org/wiki/Triangular_matrix)">triangular
 matrix</a> with no repeated info as a flattened array. Or any other pointwise selection.</p>
 <p>Here is our data:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/index.html#module-numpy.random" title="numpy.random"><span class="nn">numpy.random</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/index.html#module-numpy.random" title="numpy.random"><span class="nn">numpy.random</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a>
 
-<span class="gp">In [23]: </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">In [23]: </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">In [24]: </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.xarray.dev/en/stable/index.html#module-xarray" title="xarray"><span class="nn">xarray</span></a> <span class="k">as</span> <span class="nn">xr</span>
 <span class="gt">---------------------------------------------------------------------------</span>
@@ -661,11 +661,11 @@ matrix</a> with no repeated info as a flattened array. Or any other pointwise se
 
 <span class="ne">ModuleNotFoundError</span>: No module named 'xarray'
 
-<span class="gp">In [25]: </span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a><span class="p">()</span>
+<span class="gp">In [25]: </span><span class="n">rng</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><span class="n">default_rng</span></a><span class="p">()</span>
 
 <span class="gp">In [26]: </span><span class="n">cov</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
-<span class="gp">In [27]: </span><span class="n">cov</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html#numpy.einsum" title="numpy.einsum"><span class="n">np</span><span class="o">.</span><span class="n">einsum</span></a><span class="p">(</span><span class="s2">"...ij,...kj"</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">cov</span><span class="p">)</span>
+<span class="gp">In [27]: </span><span class="n">cov</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/generated/numpy.einsum.html#numpy.einsum" title="numpy.einsum"><span class="n">np</span><span class="o">.</span><span class="n">einsum</span></a><span class="p">(</span><span class="s2">"...ij,...kj"</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">cov</span><span class="p">)</span>
 
 <span class="gp">In [28]: </span><span class="n">cov</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -860,7 +860,7 @@ use <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/doc/source/dush/label_guide.rst">
+<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/docs/source/dush/label_guide.rst">
 <i class="fa-solid fa-pencil"></i>
       
       

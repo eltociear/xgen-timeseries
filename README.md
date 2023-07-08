@@ -44,11 +44,11 @@ By following these simple steps, you can leverage the power of the framework's e
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/models) 🤗 with just a few lines of code.
 
-![An overview of XGen framework interacted with XGen Archive](doc/source/_static/overview_xgen.png)
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/overview_xgen.png)
 
-<object data="doc/source/_static/overview_xgen.pdf" type="application/pdf" width="700px" height="400px">
-    <embed src="doc/source/_static/overview_xgen.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="doc/source/_static/overview_xgen.pdf">Download PDF</a>.</p>
+<object data="docs/source/_static/overview_xgen.pdf" type="application/pdf" width="700px" height="400px">
+    <embed src="docs/source/_static/overview_xgen.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="docs/source/_static/overview_xgen.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
@@ -258,7 +258,7 @@ And now build the model
 ```
 
 ## Distributed Training with `XGen`
-As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](https://pytorch.org/doc/stable/notes/ddp.html). 
+As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](https://pytorch.org/docs/stable/notes/ddp.html). 
 
 To do so, you can build a python script that will then be launched by a launcher (such as `srun` on a cluster). The only thing that is needed in the script is to specify some elements relative to the distributed environment (such as the number of nodes/gpus) directly in the training configuration as follows
 
@@ -449,7 +449,7 @@ See the detailed tutorial
 
 ## Generation data (Uk-DALE Dataset) 
 
-![An overview of XGen framework interacted with XGen Archive](doc/source/_static/Uk-DALE.png)
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/Uk-DALE.png)
 
 ## Dealing with issues 🛠️
 

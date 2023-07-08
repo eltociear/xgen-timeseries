@@ -259,13 +259,13 @@ other functions with the same argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgen</span> <span class="k">as</span> <span class="nn">xg</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">centered_eight</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_XGenTS_data</span><span class="p">(</span><span class="s1">'centered_eight'</span><span class="p">)</span>
 <span class="n">non_centered_eight</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_XGenTS_data</span><span class="p">(</span><span class="s1">'non_centered_eight'</span><span class="p">)</span>
 
-<span class="n">x_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">y_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x_data</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">x_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x_data</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -337,7 +337,7 @@ hashable will work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"mu"</span><span class="p">,</span> <span class="s2">"var"</span><span class="p">)</span>
-<span class="n">samples</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">samples</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/docs/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">dict_to_dataset</span><span class="p">({</span><span class="n">mu</span><span class="p">:</span> <span class="n">samples</span><span class="p">})</span>
 <span class="n">az</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 </pre></div>
@@ -566,7 +566,7 @@ of different quantities being plotted (like in <code class="docutils literal not
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In <code class="xref py py-func docutils literal notranslate"><span class="pre">plot_elpd()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">plot_khat()</span></code>, where scatter plots are generated with
-one dot per observation, <code class="docutils literal notranslate"><span class="pre">color</span></code> can also take an <a class="reference external" href="https://numpy.org/doc/stable/glossary.html#term-array_like" title="(in NumPy v1.25)"><span>array_like</span></a> of colors, one per dot.</p>
+one dot per observation, <code class="docutils literal notranslate"><span class="pre">color</span></code> can also take an <a class="reference external" href="https://numpy.org/docs/stable/glossary.html#term-array_like" title="(in NumPy v1.25)"><span>array_like</span></a> of colors, one per dot.</p>
 <p>There are examples in their respective docstrings.</p>
 </div>
 <div class="cell docutils container">
@@ -636,7 +636,7 @@ one dot per observation, <code class="docutils literal notranslate"><span class=
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/doc/source/dush/plots_arguments_guide.md">
+<a href="https://github.com/XGenTS-devs/XGenTS/edit/main/docs/source/dush/plots_arguments_guide.md">
 <i class="fa-solid fa-pencil"></i>
       
       
