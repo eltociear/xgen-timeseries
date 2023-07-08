@@ -125,8 +125,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>France</td>
       <td>I,V, P,Q, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://xgentimeseries.github.io/xgen-timeseries/ess_datasets/index.html" target="_blank"> [1]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://xgentimeseries.github.io/xgen-timeseries/ess_datasets/index.html" target="_blank"> [1]</a> </td>
     </tr>
     <tr>
       <td>IDEAL</td>
@@ -135,8 +135,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>UK</td>
       <td>P, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://datashare.ed.ac.uk/handle/10283/3647" target="_blank"> [2]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://datashare.ed.ac.uk/handle/10283/3647" target="_blank"> [2]</a> </td>
     </tr>
     <tr>
       <td>Enertalk</td>
@@ -145,8 +145,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>South Korea</td>
       <td>P,Q</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://www.nature.com/articles/s41597-019-0212-5" target="_blank"> [3]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://www.nature.com/articles/s41597-019-0212-5" target="_blank"> [3]</a> </td>
     </tr>
     <tr>
       <td>LIT</td>
@@ -155,8 +155,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>Brazil</td>
       <td>P, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://pessoal.dainf.ct.utfpr.edu.br/douglasrenaux/LIT_Dataset/" target="_blank"> [4]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://pessoal.dainf.ct.utfpr.edu.br/douglasrenaux/LIT_Dataset/" target="_blank"> [4]</a> </td>
     </tr>
     <tr>
       <td>AMPds</td>
@@ -165,8 +165,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>Canada</td>
       <td>P, S,I</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="http://ampds.org/" target="_blank"> [5]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="http://ampds.org/" target="_blank"> [5]</a> </td>
     </tr>
     <tr>
       <td>COOLL</td>
@@ -175,8 +175,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Individual appliance</td>
       <td>France</td>
       <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://coolldataset.github.io/" target="_blank"> [6]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://coolldataset.github.io/" target="_blank"> [6]</a> </td>
     </tr>
     <tr>
       <td>WHITED</td>
@@ -185,8 +185,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Individual appliance</td>
       <td>Multiples</td>
       <td>I</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://www.cs.cit.tum.de/dis/resources/whited/" target="_blank"> [7]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://www.cs.cit.tum.de/dis/resources/whited/" target="_blank"> [7]</a> </td>
     </tr>
     <tr>
       <td>REFIT</td>
@@ -195,8 +195,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>US</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned" target="_blank"> [8]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements-cleaned" target="_blank"> [8]</a> </td>
     </tr>
     <tr>
       <td>Dataport</td>
@@ -205,8 +205,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>US</td>
       <td>P,S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://ieee-dataport.org/" target="_blank"> [9]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://ieee-dataport.org/" target="_blank"> [9]</a> </td>
     </tr>
     <tr>
       <td>UK-DALE</td>
@@ -215,8 +215,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>UK</td>
       <td>I,V, P,Q, S</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://www.nature.com/articles/sdata20157" target="_blank"> [10]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://www.nature.com/articles/sdata20157" target="_blank"> [10]</a> </td>
     </tr>
     <tr>
       <td>DRED</td>
@@ -225,8 +225,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>Netherlands</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://www.st.ewi.tudelft.nl/~akshay/dred/" target="_blank"> [11]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://www.st.ewi.tudelft.nl/~akshay/dred/" target="_blank"> [11]</a> </td>
     </tr>
     <tr>
       <td>PLAID</td>
@@ -235,8 +235,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Individual appliance</td>
       <td>US</td>
       <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://energy.duke.edu/content/plug-load-appliance-identification-dataset-plaid" target="_blank"> [12]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://energy.duke.edu/content/plug-load-appliance-identification-dataset-plaid" target="_blank"> [12]</a> </td>
     </tr>
      <tr>
       <td>ECO</td>
@@ -245,8 +245,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>Switzerland</td>
       <td>I,V, P, pf</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://sites.google.com/view/activities-prediction-202b/project-homepage/eco-dataset" target="_blank"> [13]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://sites.google.com/view/activities-prediction-202b/project-homepage/eco-dataset" target="_blank"> [13]</a> </td>
     </tr>
      <tr>
       <td>iAWE</td>
@@ -255,8 +255,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>India</td>
       <td>I, V, P, Q, S, pf</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://iawe.github.io/" target="_blank"> [14]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://iawe.github.io/" target="_blank"> [14]</a> </td>
     </tr>
      <tr>
       <td>Tracebase</td>
@@ -265,8 +265,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Individual appliance</td>
       <td>Germany</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://github.com/areinhardt/tracebase" target="_blank"> [15]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://github.com/areinhardt/tracebase" target="_blank"> [15]</a> </td>
     </tr>
      <tr>
       <td>REDD</td>
@@ -275,8 +275,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>US</td>
       <td>I, V, P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://tokhub.github.io/dbecd/links/redd.html" target="_blank"> [16]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://tokhub.github.io/dbecd/links/redd.html" target="_blank"> [16]</a> </td>
     </tr>
      <tr>
       <td>BLUED</td>
@@ -285,8 +285,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>US</td>
       <td>I,V</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td><a href="https://tokhub.github.io/dbecd/links/Blued.html" target="_blank"> [17]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td><a href="https://tokhub.github.io/dbecd/links/Blued.html" target="_blank"> [17]</a> </td>
     </tr>
      <tr>
       <td>Electricity AP</td>
@@ -295,8 +295,8 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
       <td>Residential</td>
       <td>Belgium</td>
       <td>P</td>
-      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">Download</a></td>
-      <td> <a href="https://opennetzero.org/dataset/electricity-maps" target="_blank"> [18]</> </td>
+      <td><a href="https://github.com/oublalkhalid/XGen/raw/main/_static/XGenTS-001145324.hdf5">HDF5 file</a></td>
+      <td> <a href="https://opennetzero.org/dataset/electricity-maps" target="_blank"> [18]</a> </td>
     </tr>
   </tbody>
 </table>
