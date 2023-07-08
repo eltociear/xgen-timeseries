@@ -92,13 +92,10 @@ Do you know of resources about XGenTS that are not listed here? Open an issue or
 let us know!
 
 ## Books
-* Bayesian Modeling and Computation in Python: available soon
-* [Bayesian Analysis with Python](https://github.com/aloctavodia/BAP)
-* [Bayesian Data Analysis 3](http://www.stat.columbia.edu/~gelman/book/)
+* [Time-series Generative Adversarial Networks](https://papers.nips.cc/paper_files/paper/2019/file/c9efe5f26cd17ba6216bbe2a7d26d490-Paper.pdf)
+* [GT-GAN: General Purpose Time Series Synthesis with Generative Adversarial Networks](https://proceedings.neurips.cc/paper_files/paper/2022/file f03ce573aa8bce26f77b76f1cb9ee979-Paper-Conference.pdf)
+* Bayesian Modeling for time series and Computation in Python: available soon (stay tuned)
 
-## Podcasts
-* [Learning Bayesian Statistics](https://www.learnbayesstats.com/)
-* [dats'n'stats](https://www.pydata-podcast.com/)
 
 ## Blogs and example compilations
 If you have a blog that has 2 or more posts tagged as "XGenTS", you can submit
