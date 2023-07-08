@@ -14,7 +14,7 @@
 </p>
 <p align="center">
  <a>
-  <img src="docs/_static/logo.png"  width="300" height="100">
+  <img src="docs/source/_static/logo.png"  width="300" height="100">
  </a><br>	
   <a href="https://xgentimeseries.github.io/xgen-timeseries/index.html"> ➡ Documentation </a>
 </p>
