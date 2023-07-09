@@ -120,43 +120,39 @@ We validate the implementations by reproducing some results presented in the ori
 To launch a model training, you only need to call a `TrainingPipeline` instance. 
 
 ```python
-       from XGen.pipelines import TrainingPipeline
-       from XGen.models import CCGAN, CCGANConfig
-       from XGen.trainers import BaseTrainerConfig
+from XGen.pipelines import TrainingPipeline
+from XGen.models import CCGAN, CCGANConfig
+from XGen.trainers import BaseTrainerConfig
 
-       # Set up the training configuration
-       my_training_config = BaseTrainerConfig(
-   	output_dir='my_model',
-   	num_epochs=50,
-   	learning_rate=1e-3,
-   	per_device_train_batch_size=200,
-   	per_device_eval_batch_size=200,
-   	train_dataloader_num_workers=2,
-   	eval_dataloader_num_workers=2,
-   	steps_saving=20,
-   	optimizer_cls="AdamW",
-   	optimizer_params={"weight_decay": 0.05, "betas": (0.91, 0.995)},
-   	scheduler_cls="ReduceLROnPlateau",
-   	scheduler_params={"patience": 5, "factor": 0.5}
-    )
-       # Set up the model configuration 
-       my_xgen_config = XGenConfig(
-   	input_dim=(28, 3600), # (features_time, time_sequence_szie)
-   	latent_dim=10
-    )
-       # Build the model
-       my_xgen_model = XGenModel(
-   	model_config=my_xgen_config
-    )
-       # Build the Pipeline
-       pipeline = TrainingPipeline(
-    	training_config=my_training_config,
-    	model=my_model
-    )
-       # Launch the Pipeline
-       pipeline(
-   	train_data=your_train_data, # must be torch.Tensor, np.array or torch datasets
-   	eval_data=your_eval_data # must be torch.Tensor, np.array or torch datasets
+# Set up the training configuration
+my_training_config = BaseTrainerConfig(output_dir='my_model',
+                    num_epochs=50,
+                    learning_rate=1e-3,
+                    per_device_train_batch_size=200,
+                    per_device_eval_batch_size=200,
+                    train_dataloader_num_workers=2,
+                    eval_dataloader_num_workers=2,
+                    steps_saving=20,
+                    optimizer_cls="AdamW",
+                    optimizer_params={"weight_decay": 0.05, "betas": (0.91, 0.995)},
+                    scheduler_cls="ReduceLROnPlateau",
+                    scheduler_params={"patience": 5, "factor": 0.5})
+
+# Set up the model configuration 
+my_xgen_config = XGenConfig(input_dim=(28, 3600),
+                            (features_time, time_sequence_szie)
+                            latent_dim=10)
+# Build the model
+my_xgen_model = XGenModel(model_config=my_xgen_config)
+
+# Build the Pipeline
+pipeline = TrainingPipeline(training_config=my_training_config,
+                            model=my_model)
+
+# Launch the Pipeline
+pipeline(
+    train_data=your_train_data, # must be torch.Tensor, np.array or torch datasets
+    eval_data=your_eval_data # must be torch.Tensor, np.array or torch datasets
     )
 ```
 
