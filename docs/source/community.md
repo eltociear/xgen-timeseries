@@ -3,10 +3,7 @@
 XGenTS is a community-driven open source project committed to host an open,
 inclusive and positive community. Read the
 [XGenTS Code of Conduct](https://github.com/XGenTS-devs/XGenTS/blob/main/CODE_OF_CONDUCT.md)
-for guidance on how to interact with each other and make the community thrive.
-
-Our main goal is to provide backend-agnostic tools for diagnostics and visualizations of Bayesian
-inference.
+for guidance on how to interact with each other and make the community thrive. [Contact us](https://forms.gle/1XNddvv2YxCCZuGE6)
 
 We do this by:
 
@@ -37,48 +34,12 @@ This page is part of the Python XGenTS library and is therefore specific to Pyth
 but the XGenTS community is not restricted to Python and in fact, aims to act as a bridge
 between programming languages and encourage collaboration.
 
-## Participate online
-There are many alternatives and channels available to interact with other XGenTS users.
-
-### Twitter
-To begin with, you may want to follow us on Twitter! We are [@XGenTS_devs](https://twitter.com/XGenTS_devs).
-It is the best way to be up to date with the latest developments and events related
-to XGenTS.
-
-### Gitter
-The chat at [Gitter](https://gitter.im/XGenTS-devs/community) is a great space
-to ask quick questions about XGenTS and to chat with other users and contributors.
-For longer questions, the Discourse forums listed below are probably a better platform.
-
-### Affine forums
-Many XGenTS contributors are also active in one of [PyMC3 Discourse](https://discourse.pymc.io/)
-or [Stan Discourse](https://discourse.mc-stan.org/) (and sometimes even in both!).
-
 ## Conferences
-* [StanCon](https://mc-stan.org/events/)
-* [PyMCon](https://pymcon.com)
 
-# The Bayesian Python ecosystem
-In the last years, many libraries for Bayesian data analysis have been created,
-and there is a slight tendency towards more modular libraries. XGenTS plays
-an important role in this ecosystem both as the go-to library for visualization
-and diagnostics in Python for any and all {abbr}`PPL (Probabilistic programming library)`s and as a way to standardize and
-share the results of PPL libraries.
-
-The PPLs that integrate with XGenTS are:
-
-* [PyMC3](https://docs.pymc.io)
-* [Stan](https://mc-stan.org/users/documentation/)
-* [MCX](https://github.com/rlouf/mcx)
-* [Pyro](https://pyro.ai/) and [NumPyro](https://pyro.ai/numpyro/)
-* [PyJAGS](https://pypi.org/project/pyjags/)
-* [TensorFlow Probability](https://www.tensorflow.org/probability)
-
-Moreover, there are other libraries that use XGenTS for visualization and diagnostics
-and/or that are compatible with `InfereceData` objects:
-
-* [Bambi](https://bambinos.github.io/bambi/)
-* [corner.py](https://corner.readthedocs.io/en/latest/)
+* [Tutorials](https://www.climatechange.ai/tutorials?)
+* [CCAI](https://www.climatechange.ai/events/neurips2022#Papers)
+* [NeurIPS](https://nips.cc/)
+* [ICML](https://icml.cc/)
 
 # Community educational resources
 XGenTS is a transversal and backend agnostic project. One can use XGenTS with _any_ PPL,
@@ -93,13 +54,16 @@ let us know!
 
 ## Books
 * [Time-series Generative Adversarial Networks](https://papers.nips.cc/paper_files/paper/2019/file/c9efe5f26cd17ba6216bbe2a7d26d490-Paper.pdf)
-* [GT-GAN: General Purpose Time Series Synthesis with Generative Adversarial Networks](https://proceedings.neurips.cc/paper_files/paper/2022/file f03ce573aa8bce26f77b76f1cb9ee979-Paper-Conference.pdf)
-* Bayesian Modeling for time series and Computation in Python: available soon (stay tuned)
+* [GT-GAN: General Purpose Time Series Synthesis with Generative Adversarial Networks](https://arxiv.org/abs/2210.02040)
+* Bayesian Modeling for time series and Computation in Python: available soon (stay tuned 📣)
 
 
 ## Blogs and example compilations
 If you have a blog that has 2 or more posts tagged as "XGenTS", you can submit
 a pull request to add your blog to this list
+
+## Participate online
+There are many alternatives and channels available to interact with other XGenTS users.
 
 
 <!-- ```{include} external_resources.md
