@@ -102,7 +102,7 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
 </div>  <!-- End Hero -->
 
 
-### XGen Time Series ```Archive```
+#### XGen Time Series ```Archive```
 
 <table id="customers">
   <thead>
