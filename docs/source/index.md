@@ -37,7 +37,7 @@ The code will be merged into the main branch of XGen on 14 June 2023
 <div id="hero">
 
 <div id="hero-left">  <!-- Start Hero Left -->
-  <h2 style="font-size: 60px; font-weight: bold; margin: 2rem auto 0;">XGen Time Series</h2>
+  <h2 style="font-size: 50px; font-weight: bold; margin: 2rem auto 0;">XGen Time Series</h2>
   <h3 style="font-weight: bold; margin-top: 0;">An eXplainable framework for Generative Time Series</h3>
   <p>
   Designed to improve the performance of existing models using generated data. It generates novel datasets based on past or current real-world data, enabling the model to learn and improve from this valuable additional information. XGenTS also serves as an archive for a wide range of energy-related datasets. <br> 
@@ -102,7 +102,7 @@ Energy and electric mobility dataset `XGenTS.dataset('streaming')`
 </div>  <!-- End Hero -->
 
 
-#### XGen Time Series ```Archive```
+### XGen Time Series ```Archive```
 
 <table id="customers">
   <thead>
