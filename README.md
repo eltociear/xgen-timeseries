@@ -24,9 +24,9 @@
 ⚠️ Currently we updated some class of our  framework, please use our last release (v0.2.1-alpha)
 
 Why do you need XGen Time Series? 
-1) Convenient accessibility to energy datasets,
-2) Utilizing data augmentation to improve performance during training,
-3) Enhancing interpretability by explaining the nature of the augmentation generated?
+- Convenient accessibility to energy datasets,
+- Utilizing data augmentation to improve performance during training,
+- Enhancing interpretability by explaining the nature of the augmentation generated
 
 **XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource (see [use_example](src/XGenTS/archive/use_example.ipynb)):
 
@@ -179,23 +179,19 @@ The easiest way to launch a data generation from a trained model consists in usi
 You can launch the data generation process from a trained model directly with the sampler. For instance, to generate new data with your sampler, run the following.
 
 ```python
-       from XGen.models import AutoModel
-       from XGen.samplers import NormalSampler
-       # Retrieve the trained model
-       my_trained = AutoModel.load_from_folder(
-   	'path/to/your/trained/model'
-    )
-       # Define your sampler
-       my_samper = NormalSampler(
-   	model=my_trained_xgen
-    )
-       # Generate samples
-       gen_data = my_samper.sample(
-   	num_samples=50,
-   	batch_size=10,
-   	output_dir=None,
-   	return_gen=True
-    )
+from XGen.models import AutoModel
+from XGen.samplers import NormalSampler
+# Retrieve the trained model
+my_trained = AutoModel.load_from_folder(
+    'path/to/your/trained/model')
+
+# Define your sampler
+my_samper = NormalSampler(model=my_trained_xgen)
+# Generate samples
+gen_data = my_samper.sample(num_samples=50,
+                        batch_size=10,
+                        output_dir=None,
+                        return_gen=True)
 ```
 If you set `output_dir` to a specific path, the generated time series will be saved as `.csv`.
 
@@ -205,51 +201,50 @@ If you set `output_dir` to a specific path, the generated time series will be sa
 XGen provides you the possibility to define your own neural networks within the generative models. For instance, say you want to train a Wassertstein AE with a specific encoder and decoder, you can do the following:
 
 ```python
-       from XGen.models.nn import BaseEncoder, BaseDecoder
-       from XGen.models.base.base_utils import ModelOutput
-       class My_Encoder(BaseEncoder):
-   	def __init__(self, args=None): # Args is a ModelConfig instance
-   		BaseEncoder.__init__(self)
-   		self.layers = my_nn_layers()
-   		
-   	def forward(self, x:torch.Tensor) -> ModelOutput:
-   		out = self.layers(x)
-   		output = ModelOutput(
-   			embedding=out # Set the output from the encoder in a ModelOutput instance 
-   		)
-   		return output
-   
-    class My_Decoder(BaseDecoder):
-   	def __init__(self, args=None):
-   		BaseDecoder.__init__(self)
-   		self.layers = my_nn_layers()
-   		
-   	def forward(self, x:torch.Tensor) -> ModelOutput:
-   		out = self.layers(x)
-   		output = ModelOutput(
-   			reconstruction=out # Set the output from the decoder in a ModelOutput instance
-   		)
-   		return output
-   
-       my_encoder = My_Encoder()
-       my_decoder = My_Decoder()
+from XGen.models.nn import BaseEncoder, BaseDecoder
+from XGen.models.base.base_utils import ModelOutput
+class My_Encoder(BaseEncoder):
+    def __init__(self, args=None): # Args is a ModelConfig instance
+        BaseEncoder.__init__(self)
+        self.layers = my_nn_layers()
+        
+    def forward(self, x:torch.Tensor) -> ModelOutput:
+        out = self.layers(x)
+        output = ModelOutput(
+            embedding=out # Set the output from the encoder in a ModelOutput instance 
+        )
+        return output
+
+class My_Decoder(BaseDecoder):
+    def __init__(self, args=None):
+        BaseDecoder.__init__(self)
+        self.layers = my_nn_layers()
+        
+    def forward(self, x:torch.Tensor) -> ModelOutput:
+        out = self.layers(x)
+        output = ModelOutput(
+            reconstruction=out # Set the output from the decoder in a ModelOutput instance
+        )
+        return output
+
+        my_encoder = My_Encoder()
+        my_decoder = My_Decoder()
 ```
 
 And now build the model
 
 ```python
-       from XGen.models import WAE_MMD, WAE_MMD_Config
-       # Set up the model configuration 
-       my_wae_config = model_config = WAE_MMD_Config(
-   	input_dim=(1, 28, 28),
-   	latent_dim=10
-    )
+from XGen.models import WAE_MMD, WAE_MMD_Config
+# Set up the model configuration 
+my_wae_config = model_config = WAE_MMD_Config(
+    input_dim=(1, 28, 28),
+    latent_dim=10)
    
-       # Build the model
-       my_wae_model = WAE_MMD(
-   	model_config=my_wae_config,
-   	encoder=my_encoder, # pass your encoder as argument when building the model
-   	decoder=my_decoder # pass your decoder as argument when building the model
+# Build the model
+my_wae_model = WAE_MMD(
+    model_config=my_wae_config,
+    encoder=my_encoder, # pass your encoder as argument when building the model
+    decoder=my_decoder # pass your decoder as argument when building the model
     )
 ```
 
@@ -259,19 +254,19 @@ As of `v0.1.0`, XGen now supports distributed training using PyTorch's [DDP](htt
 To do so, you can build a python script that will then be launched by a launcher (such as `srun` on a cluster). The only thing that is needed in the script is to specify some elements relative to the distributed environment (such as the number of nodes/gpus) directly in the training configuration as follows
 
 ```python
-       training_config = BaseTrainerConfig(
-        num_epochs=10,
-        learning_rate=1e-3,
-        per_device_train_batch_size=64,
-        per_device_eval_batch_size=64,
-        train_dataloader_num_workers=8,
-        eval_dataloader_num_workers=8,
-        dist_backend="nccl", # distributed backend
-        world_size=8 # number of gpus to use (n_nodes x n_gpus_per_node),
-        rank=5 # process/gpu id,
-        local_rank=1 # node id,
-        master_addr="localhost" # master address,
-        master_port="12345" # master port,
+training_config = BaseTrainerConfig(
+    num_epochs=10,
+    learning_rate=1e-3,
+    per_device_train_batch_size=64,
+    per_device_eval_batch_size=64,
+    train_dataloader_num_workers=8,
+    eval_dataloader_num_workers=8,
+    dist_backend="nccl", # distributed backend
+    world_size=8 # number of gpus to use (n_nodes x n_gpus_per_node),
+    rank=5 # process/gpu id,
+    local_rank=1 # node id,
+    master_addr="localhost" # master address,
+    master_port="12345" # master port,
     )
 ```
 
@@ -306,7 +301,7 @@ $ huggingface-cli login
 ### Uploading a model to the Hub
 Any XGen model can be easily uploaded using the method `push_to_hf_hub`
 ```python
-       model.push_to_hf_hub(hf_hub_path="your_hf_username/your_hf_hub_repo")
+model.push_to_hf_hub(hf_hub_path="your_hf_username/your_hf_hub_repo")
 ```
 **Note:** If `your_hf_hub_repo` already exists and is not empty, files will be overridden. In case, 
 the repo `your_hf_hub_repo` does not exist, a folder having the same name will be created.
@@ -314,8 +309,8 @@ the repo `your_hf_hub_repo` does not exist, a folder having the same name will b
 ### Downloading models from the Hub
 Equivalently, you can download or reload any XGen's model directly from the Hub using the method `load_from_hf_hub`
 ```python
-       from XGen.models import AutoModel
-       downloaded = AutoModel.load_from_hf_hub(hf_hub_path="path_to_hf_repo")
+from XGen.models import AutoModel
+downloaded = AutoModel.load_from_hf_hub(hf_hub_path="path_to_hf_repo")
 ```
 
 ## Monitoring your experiments with `wandb` 🧪
@@ -334,30 +329,29 @@ $ wandb login
 Launching an experiment with time-real logs with `wandb` in XGen Time Series is pretty simple. The only thing a user needs to do is create a `WandbCallback` instance: 
 
 ```python
-	# Create your callback
-	from XGen.trainers.training_callbacks import WandbCallback
-	callbacks = [] # the TrainingPipeline expects a list of callbacks
-	wandb_callback = WandbCallback() # Build the callback
-	wandb_callback.setup(
-	training_config=your_training_config, # training config
-	model_config=your_model_config, # model config
-	project_name="wandb_project", # your and project
-	entity_name="wandb_entity", # your wandb entity
+# Create your callback
+from XGen.trainers.training_callbacks import WandbCallback
+callbacks = [] # the TrainingPipeline expects a list of callbacks
+wandb_callback = WandbCallback() # Build the callback
+wandb_callback.setup(
+    training_config=your_training_config, # training config
+    model_config=your_model_config, # model config
+    project_name="wandb_project", # your and project
+    entity_name="wandb_entity", # your wandb entity
     )
-       callbacks.append(wandb_callback) # Add it to the callbacks list
+callbacks.append(wandb_callback) # Add it to the callbacks list
 ```
 
 ```python
-       pipeline = TrainingPipeline(
-   	training_config=config,
-   	model=model
-    )
-       pipeline(
-   	train_data=train_dataset,
-   	eval_data=eval_dataset,
-   	callbacks=callbacks 
-    )
-       # You can log to https://wandb.ai/your_wandb_entity/your_wandb_project to monitor your training
+pipeline = TrainingPipeline(
+    training_config=config,
+    model=model)
+
+pipeline(train_data=train_dataset,
+    eval_data=eval_dataset,
+    callbacks=callbacks)
+
+# You can log to https://wandb.ai/your_wandb_entity/your_wandb_project to monitor your training
 ```
 See the detailed tutorial 
 
@@ -372,27 +366,26 @@ $ pip install mlflow
 Launching an experiment monitoring with `mlfow` in XGen is pretty simple. The only thing a user needs to do is create a `MLFlowCallback` instance   
 
 ```python
-       # Create you callback
-       from XGen.trainers.training_callbacks import MLFlowCallback
-       callbacks = [] # the TrainingPipeline expects a list of callbacks
-       mlflow_cb = MLFlowCallback() # Build the callback 
-       # SetUp the callback 
-       mlflow_cb.setup(
-   	training_config=your_training_config, # training config
-   	model_config=your_model_config, # model config
-   	run_name="mlflow_cb_example", # specify your mlflow run
+# Create you callback
+from XGen.trainers.training_callbacks import MLFlowCallback
+callbacks = [] # the TrainingPipeline expects a list of callbacks
+mlflow_cb = MLFlowCallback() # Build the callback 
+# SetUp the callback 
+mlflow_cb.setup(
+    training_config=your_training_config, # training config
+    model_config=your_model_config, # model config
+    run_name="mlflow_cb_example", # specify your mlflow run
     )
-       callbacks.append(mlflow_cb) # Add it to the callbacks list
+callbacks.append(mlflow_cb) # Add it to the callbacks list
 ```
    and then pass it to the `TrainingPipeline`.
 ```python
-       pipeline = TrainingPipeline(
-   	training_config=config,
-   	model=model
-    )
-       pipeline(
-   	train_data=train_dataset,
-   	eval_data=eval_dataset,
+pipeline = TrainingPipeline(
+    training_config=config,
+     model=model)
+    
+pipeline(train_data=train_dataset,
+    eval_data=eval_dataset,
    	callbacks=callbacks # pass the callbacks to the TrainingPipeline and you are done!
     )
 ```
@@ -413,33 +406,32 @@ $ pip install comet_ml
 Launching an experiment monitoring with `comet_ml` in XGen is pretty simple. The only thing a user needs to do is create a `CometCallback` instance   
 
 ```python
-       # Create you callback
-       from XGen.trainers.training_callbacks import CometCallback
-       callbacks = [] # the TrainingPipeline expects a list of callbacks
-       comet_cb = CometCallback() # Build the callback 
-       # SetUp the callback 
-       comet_cb.setup(
-   	training_config=training_config, # training config
-   	model_config=model_config, # model config
-   	api_key="your_comet_api_key", # specify your comet api-key
-   	project_name="your_comet_project", # specify your wandb project
-   	#offline_run=True, # run in offline mode
-   	#offline_directory='my_offline_runs' # set the directory to store the offline runs
-    )
-       callbacks.append(comet_cb) # Add it to the callbacks list
+# Create you callback
+from XGen.trainers.training_callbacks import CometCallback
+callbacks = [] # the TrainingPipeline expects a list of callbacks
+comet_cb = CometCallback() # Build the callback 
+# SetUp the callback 
+comet_cb.setup(training_config=training_config, # training config
+            model_config=model_config, # model config
+            api_key="your_comet_api_key", # specify your comet api-key
+            project_name="your_comet_project", # specify your wandb project
+            )
+callbacks.append(comet_cb) # Add it to the callbacks list
+
 ```
    and then pass it to the `TrainingPipeline`.
+   
 ```python
-       pipeline = TrainingPipeline(
-   	training_config=config,
-   	model=model
+pipeline = TrainingPipeline(
+    training_config=config,
+    model=model
     )
-       pipeline(
-   	train_data=train_dataset,
-   	eval_data=eval_dataset,
-   	callbacks=callbacks # pass the callbacks to the TrainingPipeline and you are done!
+
+pipeline(train_data=train_dataset,
+    eval_data=eval_dataset,
+    callbacks=callbacks # pass the callbacks to the TrainingPipeline and you are done!
     )
-       # You can log to https://comet.com/your_comet_username/your_comet_project to monitor your training
+# You can log to https://comet.com/your_comet_username/your_comet_project to monitor your training
 ```
 See the detailed tutorial 
 
