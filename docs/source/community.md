@@ -3,7 +3,7 @@
 XGenTS is a community-driven open source project committed to host an open,
 inclusive and positive community. Read the
 [XGenTS Code of Conduct](https://github.com/XGenTS-devs/XGenTS/blob/main/CODE_OF_CONDUCT.md)
-for guidance on how to interact with each other and make the community thrive. [Contact us](https://forms.gle/1XNddvv2YxCCZuGE6)
+for guidance on how to interact with each other and make the community thrive. If you're interested in participating or if you have any inquiries regarding our archives, please get in touch with us using the provided [form 💬](https://forms.gle/1XNddvv2YxCCZuGE6)
 
 We do this by:
 
