@@ -20,7 +20,9 @@
 </p>
 
 # XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy
-- (Our ArXiv paper soon)[#]
+
+- (Our ArXiv paper (soon))[#]
+  
 ⚠️ Currently we updated some class of our  framework, please use our last release (v0.2.1-alpha)
 
 Why do you need XGen Time Series? 
