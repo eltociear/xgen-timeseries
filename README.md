@@ -21,12 +21,9 @@
 
 # XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy
 
-> [!IMPORTANT]
-> Essential information required for user success.
-
-- [A revised version of our paper, which was submitted for the NeurIPS conference, will be soon available on ArXiv](#)
-  
-⚠️ Currently we updated some class of our  framework, please use our last release (v0.2.1-alpha)
+**Note ⚠️**
+> [A revised version of our paper, which was submitted for the NeurIPS conference, will be soon available on ArXiv](#)
+> Currently we updated some classes of our  framework, please use our last release (v0.2.1-alpha)
 
 Why do you need XGen Time Series? 
 - Convenient accessibility to energy datasets,
