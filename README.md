@@ -74,7 +74,7 @@ Additionally, the library integrates popular experiment monitoring tools such as
 To install the latest stable release of this library run the following using ``pip``
 
 ```bash
-$ pip install XGen
+$ pip install -u xgents
 ``` 
 
 To install the latest github version of this library run the following using ``pip``
