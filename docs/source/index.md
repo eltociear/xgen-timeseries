@@ -30,10 +30,6 @@ h3:not(#hero h3) {
 (homepage)=
 # XGenTS: Exploratory analysis of Energy models
 
-:::{versionadded}
-The code will be merged into the main branch of XGen on 14 June 2023
-:::
-
 <div id="hero">
 
 <div id="hero-left">  <!-- Start Hero Left -->
@@ -41,7 +37,9 @@ The code will be merged into the main branch of XGen on 14 June 2023
   <h3 style="font-weight: bold; margin-top: 0;">An eXplainable framework for Generative Time Series</h3>
   <p>
   Designed to improve the performance of existing models using generated data. It generates novel datasets based on past or current real-world data, enabling the model to learn and improve from this valuable additional information. XGenTS also serves as an archive for a wide range of energy-related datasets. <br> 
-  It's based on PyTorch and can be installed using pip.
+  It's based on PyTorch and can be installed using pip. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/master/tutorials/PSA_GAN_in_XGenTimeSeries.ipynb)
+
+  
   
   </p>
 
