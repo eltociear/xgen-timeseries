@@ -1,247 +1,196 @@
-import logging
-from typing import List, Optional, Union
-
-import numpy as np
+from tqdm import tqdm
 import torch
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import utils
+import plotting
+import lstm
+import metrics
+import train
+import torch.nn as nn
+import progressive_blocks
+from sklearn.preprocessing import MinMaxScaler
+from torch.utils.data import TensorDataset, DataLoader
+from torch.optim import Adam
 
-from ..customexception import DatasetError
-from ..data.datasets import collate_dataset_output
-from ..data.preprocessors import BaseDataset, DataProcessor
-from ..models import BaseAE
-from ..trainers import *
-from ..trainers.training_callbacks import TrainingCallback
-from .base_pipeline import Pipeline
-
-logger = logging.getLogger(__name__)
-
-# make it print to the console.
-console = logging.StreamHandler()
-logger.addHandler(console)
-logger.setLevel(logging.INFO)
-
-
-class TrainingPipeline(Pipeline):
-    """
-    This Pipeline provides an end to end way to train your VAE model.
-    The trained model will be saved in ``output_dir`` stated in the
-    :class:`~XGen.trainers.BaseTrainerConfig`. A folder
-    ``training_YYYY-MM-DD_hh-mm-ss`` is
-    created where checkpoints and final model will be saved. Checkpoints are saved in
-    ``checkpoint_epoch_{epoch}`` folder (optimizer and training config
-    saved as well to resume training if needed)
-    and the final model is saved in a ``final_model`` folder. If ``output_dir`` is
-    None, data is saved in ``dummy_output_dir/training_YYYY-MM-DD_hh-mm-ss`` is created.
-
-    Parameters:
-
-        model (Optional[BaseAE]): An instance of :class:`~XGen.models.BaseAE` you want to train.
-            If None, a default :class:`~XGen.models.VAE` model is used. Default: None.
-
-        training_config (Optional[BaseTrainerConfig]): An instance of
-            :class:`~XGen.trainers.BaseTrainerConfig` stating the training
-            parameters. If None, a default configuration is used.
-    """
-
-    def __init__(
-        self,
-        model: Optional[BaseAE],
-        training_config: Optional[BaseTrainerConfig] = None,
-    ):
-
-        if training_config is None:
-            if model.model_name == "RAE_L2":
-                training_config = CoupledOptimizerTrainerConfig(
-                    encoder_optim_decay=0,
-                    decoder_optim_decay=model.model_config.reg_weight,
-                )
-
-            elif (
-                model.model_name == "Adversarial_AE" or model.model_name == "FactorVAE"
-            ):
-                training_config = AdversarialTrainerConfig()
-
-            elif model.model_name == "VAEGAN":
-                training_config = CoupledOptimizerAdversarialTrainerConfig()
-
-            else:
-                training_config = BaseTrainerConfig()
-
-        elif model.model_name == "RAE_L2" or model.model_name == "PIWAE":
-            if not isinstance(training_config, CoupledOptimizerTrainerConfig):
-
-                raise AssertionError(
-                    "A 'CoupledOptimizerTrainerConfig' "
-                    f"is expected for training a {model.model_name}"
-                )
-            if model.model_name == "RAE_L2":
-                if training_config.decoder_optimizer_params is None:
-                    training_config.decoder_optimizer_params = {
-                        "weight_decay": model.model_config.reg_weight
-                    }
-                else:
-                    training_config.decoder_optimizer_params[
-                        "weight_decay"
-                    ] = model.model_config.reg_weight
-
-        elif model.model_name == "Adversarial_AE" or model.model_name == "FactorVAE":
-            if not isinstance(training_config, AdversarialTrainerConfig):
-
-                raise AssertionError(
-                    "A 'AdversarialTrainer' "
-                    f"is expected for training a {model.model_name}"
-                )
-
-        elif model.model_name == "VAEGAN":
-            if not isinstance(
-                training_config, CoupledOptimizerAdversarialTrainerConfig
-            ):
-
-                raise AssertionError(
-                    "A 'CoupledOptimizerAdversarialTrainer' "
-                    "is expected for training a VAEGAN"
-                )
-
-        if not isinstance(training_config, BaseTrainerConfig):
-            raise AssertionError(
-                "A 'BaseTrainerConfig' " "is expected for the pipeline"
-            )
-
-        self.data_processor = DataProcessor()
+class TrainingPipeline:
+    def __init__(self,
+                training_config = None,
+                model= None, **kwargs):
         self.model = model
-        self.training_config = training_config
+        self.batch_size = training_config["batch_size"]
+        self.discriminator_lr = training_config["discriminator_lr"]
+        self.generator_lr = training_config["generator_lr"]
+        self.num_epochs = training_config["num_epochs"]
+        self.blocks_to_add = training_config["blocks_to_add"]
+        self.timestamp = training_config["timestamp"]
+        self.ml = training_config["ml"]
+        self.fade_in = training_config["fade_in"]
+        self.sa = training_config["sa"]
+        self.save = training_config["save"]
+        self.name = training_config["name"]
+        self.gpu = training_config["gpu"]
+        self.path = training_config["path"]
+        self.device=utils.assign_device(self.gpu)
+        
+    def __call__(self,
+                train_data = None,
+                eval_data = None,
+                plot_history : bool = False,
+                *kargs):
+        
+        self.pipline(train_data=train_data, eval_data=eval_data, plot_history=plot_history)
+        
+    def pipline(self,
+                train_data = None,
+                eval_data = None,
+                plot_history : bool = False,
+                *kargs):
+        
+        train_loader = DataLoader(train_data, batch_size=self.batch_size, shuffle=False)
 
-    def _check_dataset(self, dataset: BaseDataset):
+        D = self.model["D"]
+        G = self.model["G"]
+        
+        criterion = nn.MSELoss()
+        self.device=utils.assign_device(self.gpu)
 
-        try:
-            dataset_output = dataset[0]
+        optimD = Adam(D.parameters(), lr=self.discriminator_lr, betas=(0.9, 0.999))
+        optimG = Adam(G.parameters(), lr=self.generator_lr, betas=(0.9, 0.999))
+        #embedder=lstm.LSTMEncoder().to(device)
+        #path="Models/M4/"
+        embedder=torch.load("Models/Embedder/embedder_model.pt", map_location=torch.device('cpu')).to(self.device)
 
-        except Exception as e:
-            raise DatasetError(
-                "Error when trying to collect data from the dataset. Check `__getitem__` method. "
-                "The Dataset should output a dictionnary with keys at least ['data']. "
-                "Please check documentation.\n"
-                f"Exception raised: {type(e)} with message: " + str(e)
-            ) from e
+        activeG=(G.step-1)-self.blocks_to_add
+        activeD=self.blocks_to_add
 
-        if "data" not in dataset_output.keys():
-            raise DatasetError(
-                "The Dataset should output a dictionnary with keys ['data']"
-            )
+        utils.create_folder(self.path+self.name+'/')
 
-        try:
-            len(dataset)
+        #Training
+        g_losses = []
+        d_losses = []
+        fids = []
+        G.to(self.device)
+        D.to(self.device)
+        fade=1
+        sum_fade=0
+        g_loss_min=1000000
+        d_loss_min=1000000
 
-        except Exception as e:
-            raise DatasetError(
-                "Error when trying to get dataset len. Check `__len__` method. "
-                "Please check documentation.\n"
-                f"Exception raised: {type(e)} with message: " + str(e)
-            ) from e
+        print()
+        print("Starting training:",self.name)
+        print("Total Epochs: %d \nBlocks to add with fade: %d\nTimestamp to add blocks: %d" % 
+                            (self.num_epochs, self.blocks_to_add, self.timestamp))
+        print("Fade-in",self.fade_in)
+        print("ML", self.ml)
+        print("SA", self.sa)
+        
+        
+        
+        
+        for epoch in range(1,self.num_epochs+1):
+                pbar_training = tqdm(total=len(train_loader),
+                                     position=0,
+                                     desc='Training, Epoch:{}/{}'.format(epoch,self.num_epochs))
+                g_losses_temp=[]
+                d_losses_temp=[]
+                fids_temp=[]
+                if (epoch%self.timestamp==0 and epoch!=0 and activeG!=G.step-1 and activeD!=0 and self.fade_in==True):
+                    activeD-=1
+                    activeG+=1
+                    fade=0
+                    sum_fade=1/((self.timestamp)/2)
+                    print("Block added")
 
-        # check everything if fine when combined with data loader
-        from torch.utils.data import DataLoader
+                elif(fade+sum_fade<=1 and self.fade_in==True):
+                    fade+=sum_fade
 
-        dataloader = DataLoader(
-            dataset=dataset,
-            batch_size=min(len(dataset), 2),
-            collate_fn=collate_dataset_output,
-        )
-        loader_out = next(iter(dataloader))
-        assert loader_out.data.shape[0] == min(
-            len(dataset), 2
-        ), "Error when combining dataset with loader."
+                else:
+                    fade=1
 
-    def __call__(
-        self,
-        train_data: Union[np.ndarray, torch.Tensor, torch.utils.data.Dataset],
-        eval_data: Union[np.ndarray, torch.Tensor, torch.utils.data.Dataset] = None,
-        callbacks: List[TrainingCallback] = None,
-    ):
-        """
-        Launch the model training on the provided data.
+                for i, (X, Y) in enumerate((train_loader)):
+                    X=X.to(self.device)
+                    Y=Y.to(self.device)
 
-        Args:
-            training_data (Union[~numpy.ndarray, ~torch.Tensor]): The training data as a
-                :class:`numpy.ndarray` or :class:`torch.Tensor` of shape (mini_batch x
-                n_channels x ...)
+                    # Generate fake data
+                    fake_data = G(X,fade,activeG)
+                    #fake_label = torch.zeros(Y.size(0))
 
-            eval_data (Optional[Union[~numpy.ndarray, ~torch.Tensor]]): The evaluation data as a
-                :class:`numpy.ndarray` or :class:`torch.Tensor` of shape (mini_batch x
-                n_channels x ...). If None, only uses train_fata for training. Default: None.
+                    # Train the discriminator
+                    Y=Y[:,:,:fake_data.size(2)]  #we use this to adapt real sequences length to fake sequences length
 
-            callbacks (List[~XGen.trainers.training_callbacks.TrainingCallbacks]):
-                A list of callbacks to use during training.
-        """
+                    D.zero_grad()
+                    d_real_loss = criterion(D(Y,X,fade,activeD), torch.ones_like(D(Y,X,fade,activeD)))
+                    d_fake_loss = criterion(D(fake_data.detach(),X,fade,activeD), torch.zeros_like(D(fake_data.detach(),X,fade,activeD)))
+                    d_loss = d_real_loss + d_fake_loss
+                    d_losses_temp.append(d_loss.item())
+                    d_loss.backward(retain_graph=False)
+                    optimD.step()
 
-        if isinstance(train_data, np.ndarray) or isinstance(train_data, torch.Tensor):
+                    # Train the generator
+                    G.zero_grad()
+                    g_loss = criterion(D(fake_data,X,fade,activeD), torch.ones_like(D(fake_data,X,fade,activeD)))
 
-            logger.info("Preprocessing train data...")
-            train_data = self.data_processor.process_data(train_data)
-            train_dataset = self.data_processor.to_dataset(train_data)
+                    if(self.ml==True):
+                        # Add the moment loss
+                        g_loss += utils.moment_loss(fake_data, Y)
 
-        else:
-            train_dataset = train_data
+                    g_losses_temp.append(g_loss.item())
 
-        logger.info("Checking train dataset...")
-        self._check_dataset(train_dataset)
+                    g_loss.backward()
+                    optimG.step()
 
-        if eval_data is not None:
-            if isinstance(eval_data, np.ndarray) or isinstance(eval_data, torch.Tensor):
-                logger.info("Preprocessing eval data...\n")
-                eval_data = self.data_processor.process_data(eval_data)
-                eval_dataset = self.data_processor.to_dataset(eval_data)
+                    #Compute FID
+                    with torch.no_grad():
+                        fake_embedding=embedder(fake_data)
+                        real_embedding=embedder(Y) 
+                        fid = metrics.calculate_fid(fake_embedding.to("cpu").detach().numpy(),real_embedding.to("cpu").detach().numpy())
 
-            else:
-                eval_dataset = eval_data
+                    fids_temp.append(fid)    
 
-            logger.info("Checking eval dataset...")
-            self._check_dataset(eval_dataset)
+                    # Print the losses
+                    if (i+1) % 1 == 0:
+                        
+                        pbar_training.set_postfix({"Epoch": epoch,
+                                                   "D loss":d_loss.item(),
+                                                   'G loss': d_loss.item(),
+                                                   "Fade-in:": fade,
+                                                   "FID": fid})
+                        pbar_training.update(1)
+                        
+                        #print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [G loss: %f] [Fade-in: %f] [FID: %f]" % 
+                        #    (epoch, self.num_epochs, i+1, len(train_loader), d_loss.item(), g_loss.item(), fade, fid))
+                    '''
+                    if(g_loss<g_loss_min and d_loss<d_loss_min and save):
+                            g_loss_min = g_loss
+                            d_loss_min = d_loss
+                            torch.save(G, path+name+'/'+name+'_generator.pt')
+                            torch.save(D, path+name+'/'+name+'_discriminator.pt')
+                            print('Improvement-Detected, model saved')
+                    '''
 
-        else:
-            eval_dataset = None
+                g_losses.append(torch.mean(torch.Tensor(g_losses_temp)))
+                d_losses.append(torch.mean(torch.Tensor(d_losses_temp)))
+                fids.append(torch.mean(torch.Tensor(fids_temp)))
 
-        if isinstance(self.training_config, CoupledOptimizerTrainerConfig):
-            logger.info("Using Coupled Optimizer Trainer\n")
-            trainer = CoupledOptimizerTrainer(
-                model=self.model,
-                train_dataset=train_dataset,
-                eval_dataset=eval_dataset,
-                training_config=self.training_config,
-                callbacks=callbacks,
-            )
-
-        elif isinstance(self.training_config, AdversarialTrainerConfig):
-            logger.info("Using Adversarial Trainer\n")
-            trainer = AdversarialTrainer(
-                model=self.model,
-                train_dataset=train_dataset,
-                eval_dataset=eval_dataset,
-                training_config=self.training_config,
-                callbacks=callbacks,
-            )
-
-        elif isinstance(self.training_config, CoupledOptimizerAdversarialTrainerConfig):
-            logger.info("Using Coupled Optimizer Adversarial Trainer\n")
-            trainer = CoupledOptimizerAdversarialTrainer(
-                model=self.model,
-                train_dataset=train_dataset,
-                eval_dataset=eval_dataset,
-                training_config=self.training_config,
-                callbacks=callbacks,
-            )
-
-        elif isinstance(self.training_config, BaseTrainerConfig):
-            logger.info("Using Base Trainer\n")
-            trainer = BaseTrainer(
-                model=self.model,
-                train_dataset=train_dataset,
-                eval_dataset=eval_dataset,
-                training_config=self.training_config,
-                callbacks=callbacks,
-            )
-        else:
-            raise ValueError("The provided training config is not supported.")
-
-        self.trainer = trainer
-
-        trainer.train()
+        values=['Last G loss: '+str(g_losses[-1].item()), 
+                'Last D loss: '+str(d_losses[-1].item()),
+                'Last FID: '+str(fids[-1].item()),
+                'epochs: '+str(self.num_epochs),
+                'ML: '+str(self.ml),
+                'SA: '+str(self.sa),
+                'Fade-in: '+str(self.fade_in),
+                'Blocks to add: '+str(self.blocks_to_add),
+                'Timestamp: '+str(self.timestamp),
+                ]
+        torch.save(G, self.path+self.name+'/'+self.name+'_generator.pt')
+        torch.save(D, self.path+self.name+'/'+self.name+'_discriminator.pt')
+        
+        if plot_history:
+            plotting.plot_training_history('PSA-GAN - M4 - '+self.name,d_losses, g_losses)
+            plotting.plot_fid_history('PSA-GAN - M4 - '+self.name, fids)
+        location=self.path+'/'+self.name+'/'+self.name
+        utils.write_file(location, values)
+        
+        return  {"d_losses": d_losses, "g_losses": g_losses, "fids": fids}

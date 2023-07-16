@@ -170,9 +170,9 @@ See [README.md](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/exam
 
 ## Generate new Time Series
 
-### Using the `GenerationPipeline`
+### Using the `TimeGenerationPipeline`
 
-The easiest way to launch a data generation from a trained model consists in using the built-in `GenerationPipeline` provided in XGen. Say you want to generate 100 samples using a `MAFSampler` all you have to do is 1) relaod the trained model, 2) define the sampler's configuration and 3) create and launch the `GenerationPipeline`.
+The easiest way to launch a data generation from a trained model consists in using the built-in `TimeGenerationPipeline` provided in XGen. Say you want to generate 100 samples using a `MAFSampler` all you have to do is 1) relaod the trained model, 2) define the sampler's configuration and 3) create and launch the `TimeGenerationPipeline`.
 
 
 ### Samplers Modules

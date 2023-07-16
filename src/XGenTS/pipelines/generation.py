@@ -17,7 +17,7 @@ logger.addHandler(console)
 logger.setLevel(logging.INFO)
 
 
-class GenerationPipeline(Pipeline):
+class TimeGenerationPipeline(Pipeline):
     """
     This Pipeline provides an end to end way to generate samples from a trained VAE model. It only
     needs a :class:`XGen.models` to sample from and a smapler configuration.
@@ -41,43 +41,36 @@ class GenerationPipeline(Pipeline):
         if sampler_config is None:
             sampler_config = NormalSamplerConfig()
 
-        if sampler_config.name == "NormalSamplerConfig":
+        if sampler_config.name == "NormalSampler":
             sampler = NormalSampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "GaussianMixtureSamplerConfig":
+        elif sampler_config.name == "GaussianMixtureSampler":
             sampler = GaussianMixtureSampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "IAFSamplerConfig":
+        elif sampler_config.name == "IAFSampler":
             sampler = IAFSampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "MAFSamplerConfig":
+        elif sampler_config.name == "MAFSampler":
             sampler = MAFSampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "RHVAESamplerConfig":
-            sampler = RHVAESampler(model=model, sampler_config=sampler_config)
-
-        elif sampler_config.name == "PixelCNNSamplerConfig":
-            sampler = PixelCNNSampler(model=model, sampler_config=sampler_config)
-
-        elif sampler_config.name == "TwoStageVAESamplerConfig":
+        elif sampler_config.name == "TwoStageVAESampler":
             sampler = TwoStageVAESampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "VAMPSamplerConfig":
+        elif sampler_config.name == "VAMPSampler":
             sampler = VAMPSampler(model=model, sampler_config=sampler_config)
 
-        elif sampler_config.name == "HypersphereUniformSamplerConfig":
+        elif sampler_config.name == "HypersphereUniformSampler":
             sampler = HypersphereUniformSampler(
                 model=model, sampler_config=sampler_config
             )
 
-        elif sampler_config.name == "PoincareDiskSamplerConfig":
+        elif sampler_config.name == "PoincareDiskSampler":
             sampler = PoincareDiskSampler(model=model, sampler_config=sampler_config)
 
         else:
             raise NotImplementedError(
                 "Unrecognized sampler config name... Check that that the sampler_config name "
-                f"is written correctly. Got '{sampler_config.name}'."
-            )
+                )
 
         self.sampler = sampler
 
