@@ -52,7 +52,6 @@ Additionally, the library integrates popular experiment monitoring tools such as
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="docs/source/_static/overview_xgen.pdf">Download PDF</a>.</p>
     </embed>
 </object>
-
 **Note**
 > Your ```XGen Time Series``` now supports distributed training using PyTorch's DDP (Distributed Data Parallel). With this new feature, you can now train your preferred Generative Time Series models faster and on custom datasets, all with just a few lines of code. This allows for improved scalability and accelerated training across multiple GPUs or even distributed systems.
 > To showcase the enhanced performance, we have conducted a comprehensive benchmarking analysis. You can find the detailed results in the benchmark section of our documentation. This benchmark highlights the significant speed-up achieved by leveraging the distributed training capabilities of XGen Time Series.
@@ -62,6 +61,7 @@ Additionally, the library integrates popular experiment monitoring tools such as
 ## Quick access:
 - [Installation](#installation)
 - [Implemented models](#available-models) / [Implemented samplers](#available-samplers)
+- [ESS Dataset: A Novel Curated Dataset for Fine-grained Analysis XGen-ESS](https://xgentimeseries.github.io/xgen-timeseries/ess_datasets/index.html)
 - [Reproducibility statement](#reproducibility) / [Results flavor](#results)
 - [Model training](#launching-a-model-training) / [Data generation](#launching-data-generation) / [Custom network architectures](#define-you-own-autoencoder-architecture) / [Distributed training](#distributed-training-with-XGen)
 - [Model sharing with 🤗 Hub](#sharing-your-models-with-the-huggingface-hub-) / [Experiment tracking with `wandb`](#monitoring-your-experiments-with-wandb-) / [Experiment tracking with `mlflow`](#monitoring-your-experiments-with-mlflow-) / [Experiment tracking with `comet_ml`](#monitoring-your-experiments-with-comet_ml-)
@@ -100,13 +100,14 @@ Below is the list of the models currently implemented in the library.
 
 |               Models               |                                                                                    Training example                                                                                    |                     Paper                    |                           Official Implementation                          |
 |:----------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------:|:--------------------------------------------------------------------------:|
-| PSA-GAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/master/tutorials/PSA_GAN_in_XGenTimeSeries.ipynb) |                    [link](https://arxiv.org/abs/2108.00981)                             |  
-| WaveGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9053795)                             |                                                                         |
-| TimeGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://arxiv.org/pdf/1706.02633.pdf)                             |                                                                         |
-| GT-GAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                      [link](https://arxiv.org/pdf/1706.02633.pdf)                           |                                                                         |
-| RCGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                      [link](https://arxiv.org/pdf/1706.02633.pdf)                           |                                                                         |
-| Professor Forcing                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                       [link](https://arxiv.org/pdf/1706.02633.pdf)                          |                                                                         |
-| RGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://arxiv.org/pdf/1706.02633.pdf)                             |                                                                      |
+| PSA-GAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XgenTimeSeries/xgen-timeseries/blob/master/tutorials/PSA_GAN_in_XGenTimeSeries.ipynb) |                    [link](https://arxiv.org/abs/2108.00981)                             |   -
+| WaveGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9053795)                             |                        -                                                 |
+| TimeGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://arxiv.org/pdf/1706.02633.pdf)                             |                               [tensorflow](https://github.com/flaviagiammarino/time-gan-tensorflow)                                              |
+| GT-GAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                      [link](https://arxiv.org/pdf/1706.02633.pdf)                           |                                    [tensorflow](https://github.com/ratschlab/RGAN/blob/master/model.py)                                    |
+| RCGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                      [link](https://arxiv.org/pdf/1706.02633.pdf)                           |                               -                                          |
+| Professor Forcing                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                       [link](https://arxiv.org/pdf/1706.02633.pdf)                          |                                   -                                      |
+| RGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](https://arxiv.org/pdf/1706.02633.pdf)                             |                            -                                          |
+| PROBGAN                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#) |                    [link](http://www.wanghao.in/paper/ICLR19_ProbGAN.pdf)                             |                              -                                        |
 
 
 
