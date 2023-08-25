@@ -1,0 +1,36 @@
+/* unvisited link
+a:link {
+  color: red;
+}s 
+
+/* visited link  */
+.text-table-a:visited {
+  color: var(--pst-color-primary);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--pst-color-a-text);
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+.sphinx-codeautolink-a{
+  border-bottom-color: rgb(0, 0, 0);
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+.sphinx-codeautolink-a:hover{
+  color: var(--pst-color-primary-table-text); /*rgb(255, 139, 139); */
+}
+
+.supportbutton a {
+  color: var(--pst-color-primary-table-text);
+}
+
+.navbar-brand {
+display: inline-block !important;
+}
