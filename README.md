@@ -32,7 +32,7 @@ Why do you need XGen Time Series?
 ```
 !pip install -u xgents
 from xgents import XGenExplainer
-explain = XGenExplainer(real_x=X, gen_model=[GTGAN,TimeGAN, GT-GAN],
+explain = XGenExplainer(real_x=X, gen_model=[GTGAN,TimeGAN, RCGAN],
                         model="DeepAR", method="GRAD", metric="PGU") 
 ```
 ![leaderboard](docs/source/_static/leaderboard.png)
