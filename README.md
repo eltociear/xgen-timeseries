@@ -20,7 +20,7 @@
 </p>
 
 # XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy [(arxiv paper)](https://arxiv.org/abs/2407.01003)
-![An overview of XGen framework interacted with XGen Archive](docs/source/_static/overview_xgen_TimeSeries.png)
+![An overview of XGen framework interacted with XGen Archive](docs/source/_static/overview.png)
 **Note ⚠️**
 - Currently, we updated some classes of our  framework, please use our last release (v0.2.1-alpha)
 
