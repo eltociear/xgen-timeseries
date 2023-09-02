@@ -7,11 +7,10 @@ from pydantic import ValidationError
 from pydantic.dataclasses import dataclass
 
 
-@dataclass
 class BaseConfig:
     """This is the BaseConfig class which defines all the useful loading and saving methods
     of the configs"""
-
+    
     name: str = field(init=False)
 
     def __post_init__(self):
