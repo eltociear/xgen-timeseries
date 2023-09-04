@@ -2,11 +2,8 @@ import numpy as np
 import torch
 from tqdm import tqdm
 from ... api import Explainer
-
-# import lime
 from .lime_package import lime_tabular
 from .lime_package import lime_image
-
 
 class LIME(Explainer):
     """
