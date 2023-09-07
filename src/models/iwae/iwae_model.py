@@ -9,7 +9,6 @@ from ..nn import BaseDecoder, BaseEncoder
 from ..vae import VAE
 from .iwae_config import IWAEConfig
 
-
 class IWAE(VAE):
     """
     Importance Weighted Autoencoder model.
