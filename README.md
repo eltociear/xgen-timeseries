@@ -1,3 +1,6 @@
+**Note Emergency 🆘**
+
+We released XGen to the public after a technical error (we lost the starts and some watching). 
 
 <p align="center">
         <a>
@@ -53,10 +56,8 @@ By following these simple steps, you can leverage the power of the framework's e
 
 Additionally, the library integrates popular experiment monitoring tools such as [wandb](https://wandb.ai/), [mlflow](https://mlflow.org/), and [comet-ml](https://www.comet.com/signup?utm_source=XGen&utm_medium=partner&utm_campaign=AMS_US_EN_SNUP_XGen_Comet_Integration) 🧪. It also allows for easy model sharing and loading from the [HuggingFace Hub](https://huggingface.co/XGenTimeSeries) 🤗 with just a few lines of code.
 
-**Note Emergency 🆘**
-We released XGen to the public after a technical error (we lost the starts and some waching). 
 
-**Note 2**
+**Note**
 > Your ```XGen Time Series``` now supports distributed training using PyTorch's DDP (Distributed Data Parallel). With this new feature, you can now train your preferred Generative Time Series models faster and on custom datasets, all with just a few lines of code. This allows for improved scalability and accelerated training across multiple GPUs or even distributed systems.
 > To showcase the enhanced performance, we have conducted a comprehensive benchmarking analysis. You can find the detailed results in the benchmark section of our documentation. This benchmark highlights the significant speed-up achieved by leveraging the distributed training capabilities of XGen Time Series.
 > Take advantage of XGen 0.2's distributed training support and experience accelerated training for your Generative Time Series models. Visit our documentation and explore the benchmark section to learn more about the performance improvements and how to make the most out of this latest release.
