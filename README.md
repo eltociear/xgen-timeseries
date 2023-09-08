@@ -1,6 +1,3 @@
-**Note Emergency 🆘**
-
-We released XGen to the public after a technical error (we lost the starts and some watching). 
 
 <p align="center">
         <a>
