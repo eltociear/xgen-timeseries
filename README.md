@@ -38,6 +38,26 @@ explain = XGenExplainer(real_x=X, gen_model=[GTGAN,TimeGAN, RCGAN],
 ```
 ![leaderboard](docs/source/_static/leaderboard.png)
 
+### Evaluation Meet Explainability
+
+Visual methods for explaining attribution features are limited for large datasets. XGen incorporates explanation fidelity in XGenExplain with metrics like PGI and PGU [1], RIS, and ROS [2] (denoted as $\mathcal{M}^\text{PGU}$, $\mathcal{M}^\text{PGI}$, $\mathcal{M}^\text{RIS}$, and $\mathcal{M}^\text{ROS}$ respectively). It quantitatively assesses local explanation performance and model disparity between real **($\mathcal{X}_{R}$)** and generated **($\mathcal{X}_{G}$)** data through **($\delta \mathcal{M}$)**. Experiments show a significant link between lower $\delta \mathcal{M}^{PGU}$ (preferably lower), improved MAE, and RMSE in follow-up tasks. $\delta$ RMSE and $\delta$ MAE denote the absolute gaps in DeepAR prediction performance. This observation is further supported by Shaplet plots, detailed in Appendix G.
+
+| Method        | MAE        | RMSE        | $\delta$ MAE      | $\delta$ RMSE      | $\delta \mathcal{M}^\text{PGU}$ GRAD   | $\delta \mathcal{M}^\text{PGU}$ DeepLift | $\delta \mathcal{M}^\text{PGU}$ LIME   |
+|---------------|------------|------------|------------|------------|------------|--------------|------------|
+| TimeVAE       | .587±.002  | .881±.079  | .515±.006  | .678±.079  | .552±.051  | .158±.008    | .522±.040  |
+| GTGAN         | **.200±.010** | **.227±.006** | **.098±.010** | **.024±.006** | **.170±.011** | .065±.013    | **.145±.032** |
+| TimeGAN       | .398±.020  | .588±.001  | .296±.020  | .385±.001  | .210±.003  | .060±.008    | .292±.041  |
+| RCGAN         | .221±.070  | .361±.001  | .119±.070  | .158±.001  | .246±.013  | .149±.013    | .192±.003  |
+| C-RNN-GAN     | .520±.017  | .780±.003  | .418±.017  | .577±.003  | .186±.002  | .059±.028    | .193±.007  |
+| PSA-GAN       | .519±.007  | .778±.010  | .417±.007  | .575±.010  | .171±.003  | **.058±.001** | .160±.004  |
+| WaveGAN       | .211±.012  | .316±.010  | .010±.012  | .113±.010  | .174±.304  | .137±.003    | .296±.002  |
+| T-Forcing     | .522±.071  | .783±.004  | .420±.071  | .580±.004  | .174±.004  | .068±.001    | .375±.001  |
+| Real          | .101±.002  | .203±.006  | -          | -          | -          | -            | -          |
+| Real-GTGAN    | **.102±.006** | **.187±.010** | .000±.004  | .016±.010  | .001±.001  | .003±.008    | .006±.001  |
+
+The correlation between high-quality generated data and reduced disparities in explanations holds consistent for the metrics $\mathcal{M}^\text{PGI}$, $\mathcal{M}^\text{RIS}$, and $\mathcal{M}^\text{ROS}$. This insight offers a means of assessing the generated data quality. Presently, XGen has matured to provide all these metrics, presenting them in a leaderboard format. This enables us to clearly observe that integrating this with augmentation or imputation will likely enhance model learning. We have also introduced additional downstream task models, catering to forecasting and disaggregation.
+
+
 **XGen-Archive.** The framework provides an extensive archive of energy data specifically designed for forecasting and disaggregation tasks. With its user-friendly interface, utilizing the archive is straightforward. Here's an example of how to make use of this valuable resource (see [use_example](src/XGenTS/archive/use_example.ipynb)):
 
 ```
