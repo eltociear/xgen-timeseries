@@ -22,10 +22,6 @@
 # XGen: A Comprehensive Archive and an eXplainable Time Series Generation Framework for Energy [(arxiv paper)](https://arxiv.org/abs/2407.01003)
 ![An overview of XGen framework interacted with XGen Archive](docs/source/_static/overview.png)
 
-**Note Emergency 🆘**
-- We released XGen to the public after a technical error (we lost the starts and some watching). 
-
-
 **Note ⚠️**
 - Currently, we updated some classes of our  framework, please use our last release (v0.2.1-alpha)
 
