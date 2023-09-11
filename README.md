@@ -472,6 +472,14 @@ If you are experiencing any issues while running the code or request new feature
 
 You want to contribute to this library by adding a model, a sampler or simply fix a bug ? That's awesome! Thank you! Please see [CONTRIBUTING.md](https://github.com/XgenTimeSeries/xgen-timeseries/tree/main/CONTRIBUTING.md) to follow the main contributing guidelines.
 
+
+# References
+
+[1] Fairness via Explanation Quality https://arxiv.org/abs/2205.07277
+
+[2] Randomized Input Sampling for Explanation of Black-box Models https://arxiv.org/abs/1806.07421
+
+
 # Citation
 
 If you find this work useful or use it in your research, please consider citing using:
