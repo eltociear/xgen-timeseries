@@ -221,7 +221,7 @@ gen_data = my_samper.sample(num_samples=50,
 If you set `output_dir` to a specific path, the generated time series will be saved as `.csv`.
 
 
-## Your own Model architecture for forecasting or Energy Dissagregation 
+## Your own Model architecture for forecasting or Energy Disaggregation 
  
 XGen provides you the possibility to define your own neural networks within the generative models. For instance, say you want to train a Wassertstein AE with a specific encoder and decoder, you can do the following:
 
